@@ -1,255 +1,390 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>OpenEarthMap Few-Shote Challenge</title>
+
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.101.0">
-    <title>Geoinformatics Team</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/">
+    <!-- <base href="/"> -->
 
-<link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!--FACEBOOK-->
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
+<!--     <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+  <!-- <link rel="icon" type="image/png" href="img/seal_icon.png"> -->
+    <!-- Place favicon.ico in the root directory -->
 
-      .b-example-divider {
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="./assets/css/app.css">
 
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
 
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
-
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-      
-      /*.navbar-nav .active {
-          color: #19B49B !important;
-          }*/
-
-    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
     
-    <!-- Custom styles for this template -->
-    <link href="./assets/css/carousel.css" rel="stylesheet">
-  </head>
-  <body>
-    
-<header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container-xl">
-      <a class="navbar-brand" href="https://geoinformatics2018.com/"><img src="./assets/brand/Geoinfo_Logo.png" alt="" height="40"> Geoinformatics Team</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="./research.html">Research</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="./team.html">Team</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="./publication.html">Publication</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="./opportunity.html">Opportunity</a>
-          </li>
-          <!--<li class="nav-item">
-            <a class="nav-link" href="">Download</a>
-          </li>-->
-          <!--<li class="nav-item">
-            <a class="nav-link" href="#">News</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link">Overview</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link">Demo</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link">Download</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link">Leaderboard</a>
-          </li>
-        </ul>-->
-        <!--<form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>-->
-      </div>
-    </div>
-  </nav>
-</header>
+    <script src="./assets/js/app.js"></script>
+</head>
 
-<main>
-
-  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <!--<button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>-->
-    </div>
-    <div class="carousel-inner">
-    
-      <div class="carousel-item active">
-        <img src="./assets/img/img2.webp" class="d-block h-100" alt="...">
-        <div class="container">
-          <div class="carousel-caption text-start">
-            <h1>OpenEarthMap</h1>
-            <p>We built up the world-leading benchmark dataset for high-resolution land cover mapping with the goal of providing automated mapping for everyone.</p>
-            <p><a class="btn btn-lg btn-primary" href="https://open-earth-map.org">Project Page</a></p>
-          </div>
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center"><img src="./assets/img/OpenEarthMap_Logo_v2.png" alt="OpenEarthMap" height="100"></h2>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <!-- <h4>
+                        <b>Submission Servers are open!</b>
+                    </h4> -->
+                    <image src="./assets/img/img2.webp" class="img-responsive" alt="overview"></image>
+                </div>
         </div>
-      </div>
-      
-      <div class="carousel-item">
-        <img src="./assets/img/openposi.jpg" class="d-block h-100" alt="...">
-        <div class="container">
-          <div class="carousel-caption text-end">
-            <h1>Open Position</h1>
-            <p>We are currently seeking a research scientist or postdoctoral researcher.</p>
-            <p><a class="btn btn-lg btn-primary" href="https://www.riken.jp/en/careers/researchers/20230116_7/index.html" target="_blank">View details</a></p>
-          </div>
+            <!-- <h2><a class="col-md-12 text-center" href=""><img src="./assets/img/OpenEarthMap_Logo_v2.png" alt="OpenEarthMap" height="90"></a></h2> -->
+            <h2 class="col-md-12 text-center">
+                OpenEarthMap Land Cover Mapping Few-Shot Challenge</br> 
+                <small>
+                    Co-organized with the <a href="https://sites.google.com/view/l3divu2024/overview" target="_blank">L3D-IVU CVPR 2024</a> Workshop
+                </small>
+            </h2>
         </div>
-      </div>
-      
-      <!--<div class="carousel-item">
-        <img src="./hackathon.jpg" class="d-block h-100" alt="...">
-        <div class="container">
-          <div class="carousel-caption text-end">
-            <h1>OpenEarthMap Tutorial</h1>
-            <p>Tutorial on how to use OpenEarthMap is open to everyone.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
-          </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="#servers">
+                          Submission Portal
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#dataset">
+                          Dataset Download
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#code">
+                          Baseline Code
+                        </a>
+                    </li>
+                </ul>   
+            </div>
         </div>
-      </div>-->
+        <br>
+
+        <div class="row">
+                <!-- <div class="col-md-8 col-md-offset-2"> -->
+                    <h4 class="col-md-8 col-md-offset-2">
+                        <b>Submission portal for development stage (1st Round) is opened!</b>
+                    </h4>
+                    <!-- <image src="./assets/img/img3.jpg" class="img-responsive" alt="overview"></image>
+                </div> -->
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    About
+                </h3>
+                <p class="text-justify">
+                    <!-- The challenge is part of Workshop on Learning with Limited Labelled Data for Image and Video Understanding, held at CVPR 2022. -->
+                    The <a href="https://open-earth-map.org/" target="_blank">OpenEarthMap</a> is a remote sensing (RS) semantic segmentation benchmark dataset consisting of 
+                    aerial/satellite images covering 97 regions from 44 countries across 6 continents at a spatial resolution of 0.25--0.5m ground sampling
+                    distance for global high-resolution land cover mapping. It presents an advancement in geographical diversity and annotation
+                    quality over existing benchmarks. OpenEarthMap benchmark models generalize worldwide and they can be used as an off-the-shelf
+                    model in a wide range of RS applications.
+                </p>
+                <p class="text-justify">
+                    This challenge is an extension of the 8-class land-cover semantic segmentation task of the OpenEarthMap benchmark.
+                    The aim of the challenge is to evaluate and benchmark learning methods for few-shot semantic segmentation on the OpenEarthMap dataset. 
+                    The motivation is to enable researchers to develop few-shot learning algorithms for high-resolution RS image semantic segmentation, 
+                    which is a very important problem in the applications of RS image analysis.
+                </p>
+                <!-- <p>The main goal of this challenge is to evaluate and benchmark new and better methods for GQA-LT and VG8K-LT benchmarks 
+                    proposed in Exploring Long Tail Visual Relationship Recognition with Large Vocabulary. One high level motivation is
+                     to allow researchers to develop methods for long-tail visual relationship recognition - a very important problem for
+                     fine-grained image understanding. Both the benchmarks, GQA-LT and VG8K-LT, are long-tailed created out of GQA and VG datasets.
+                     With the presence of bounding boxes during both training and test time, the participants are required to submit a csv 
+                     file containing the detection results of subject/object and the relation classes in the corresponding triplet.</p> -->
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Important Dates
+                </h3>
+                <p class="text-justify">
+                    <ul>
+                        <li>
+                            <b>Feb 05, 2024:</b> Opening the challenge submission portal for development phase (First Round).
+                        </li>
+                        <li>
+                            <b>Feb 05, 2024:</b> Opening paper submission (Call for the challenge paper).
+                        </li>
+                        <li>
+                            <b>Mar 22, 2024:</b> Paper submission deadline.
+                        </li>
+                        <li>
+                            <b>Mar 23, 2024:</b> Opening the challenge submission portal for evaluation phase (Second Round).
+                        </li>
+                        <li>
+                            <b>Mar 29, 2024:</b> The challenge submission deadline.
+                        </li>
+                        <li>
+                            <b>Apr 07, 2024:</b> Paper notification to authors.
+                        </li>
+                        <li>
+                            <b>Apr 14, 2024:</b> Camera-ready deadline.
+                        </li>
+                        <li>
+                            <b>Apr 21, 2024:</b> Challenge winner announcement.
+                        </li>
+                    </ul>
+                    Workshop: 19th June, 2024
+                </p>
+                <hr>
+            </div>
+        </div>
+
+<!-- Workshop Paper submission deadline: 6th March 2024, 11:59 pm Pacific Time.
+Notification to authors: 4th April 2024.
+Camera-ready deadline: 14th April 2024. -->
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Task & Metrics
+                </h3>
+                <!-- <p class="text-justify">
+                    The main task for both of these benchmarks is to predict relationship and at the same time subject/object associated with the triplet. During training and evaluation,
+                    the ground-truth bounding boxes are already provided and hence the main aim is the classification of sbj/obj and the rel associated with them.
+                    The main metric used for the challenge is <i>average per-class accuracy</i>, which is the accuracy of each class calculated separately, then average.
+                    The average per-class accuracy is a commonly used metric in the long-tail literature. Further details about the metrics on the leaderboard is give below:
+                    
+                    <ul>
+                        <li>
+                            <b>rel_all_per_class:</b> The per-class relationship classification performance averaged across all classes.
+                        </li>
+                        <li>
+                            <b>sbj_obj_all_per_class:</b> The per-class subject/object classification performance averaged across all classes.
+                        </li>
+                        <li>
+                            <b>trip_sro_scores_all:</b> The triplet classification performance averaged across all possible triplet types
+                        </li>
+                        <li>
+                            <b>trip_or_scores_all:</b> The triplet classification performance averaged across all possible object-relation combination types.
+                        </li>
+                        <li>
+                            <b>trip_sr_scores_all:</b> The triplet classification performance averaged across all possible subject-relation combination types.
+                        </li>
+                        <li>
+                            <b>trip_so_scores_all:</b>  The triplet classification performance averaged across all possible subject-object combination types.
+                        </li>
+                    </ul>
+                </p> -->
+                <hr>
+            </div>
+        </div>
+                    <!-- We report the results on the subject, object, and relation separately of an (S,R,O) triplet on GQA-LT and VG8K-LT datasets. We evaluate
+                    the models using the average per-class accuracy across several frequency bands chosen based on frequency percentiles for GQA-LT and VG8K-LT, which can be seen below:
+                </p>
+                <center>
+                    <image src="img/gqa_split.png" class="img-responsive" alt="overview"></image>
+                    <figcaption>Table 1 - GQA-LT splits</figcaption>
+                </center>
+                <br>
+                <center>
+                    <image src="img/vg8k_split.png" class="img-responsive" alt="overview"></image>
+                    <figcaption>Table 2 - VG8K-LT splits</figcaption>
+                </center>
+                <br>
+                
+                <p class="text-justify">
+                    Hence the metrics <i>rel_many, rel_med, rel_few, rel_all_per_class</i> are calculated by taking into account Table 1 & 2 for relations, and <i>sbj_obj_many, sbj_obj_med, sbj_obj_few, sbj_obj_all_per_class</i>
+                    are calculated by taking into account Table 1 & 2 for sbj/obj. The other two metrics <i>rel_all_per_example</i> and <i>sbj_obj_all_per_example</i> are the standard metrics 
+                    that just average individual prediction scores that has been used in the literature. You can also find more info about the dataset and the metrics in the <a href='docs/supplementary_document.pdf'>supplementary document</a>.
+                </p>
+                <hr>
+            </div>
+        </div> -->
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Rules & Subission Format
+                </h3>
+                <!-- <p class="text-justify">
+                    The submission is supposed to be a csv file (named <i>rel_detections_gt_boxes_prdcls.csv</i> when the given evaluation code is run on starter code) that is to be renamed 
+                    <b>answer.csv</b> and compressed into a .zip file (named <b>submission.zip</b>) before submission. No other format of submission will be accepted.
+                </p> -->
+                <hr>
+            </div>
+        </div>
+
+        <!-- <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Subission Format
+                </h3>
+                <p class="text-justify">
+                    The submission is supposed to be a csv file (named <i>rel_detections_gt_boxes_prdcls.csv</i> when the given evaluation code is run on starter code) that is to be renamed 
+                    <b>answer.csv</b> and compressed into a .zip file (named <b>submission.zip</b>) before submission. No other format of submission will be accepted.
+                </p>
+                <hr>
+            </div>
+        </div> -->
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3 id="servers">
+                    Submission Portal
+                </h3>
+                <!-- <p class="text-justify">
+                    <ul>
+                        <li>
+                            <b>Challenge 1:</b> GQA-LT Benchmark: <a href="https://codalab.lisn.upsaclay.fr/competitions/10821">Link</a>
+                        </li>
+                        <li>
+                            <b>Challenge 2:</b> VG8K-LT Benchmark: <a href="https://codalab.lisn.upsaclay.fr/competitions/10822">Link</a>
+                        </li>
+                    </ul>
+                </p> -->
+                <hr>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3 id="dataset">
+                    Download Dataset
+                </h3>
+                <!-- <p class="text-justify">
+                    <ul>
+                        <li>
+                            <b>GQA-LT:</b> <br> You can download the annotations and splits necessary for the GQA-LT benchmark <a href="https://drive.google.com/file/d/1ypmMOq2TkZyLNVuU9agHS7_QcsfTtBmn/view?usp=sharing">here</a>.
+                            You should see a 'gvqa' folder once unzipped. It contains seed folder called 'seed0' that contains .json annotations suited for the dataloader used in our implementations. Also, download GQA images from <a href="https://cs.stanford.edu/people/dorarad/gqa/download.html">here</a>
+                        </li>
+                        <li>
+                            <b>VG8K-LT:</b> <br> You can download the annotations and splits necessary for the VG8K-LT benchmark <a href="https://drive.google.com/file/d/1S8WNnK0zt8SDAGntkCiRDfJ8rZOR3Pgx/view?usp=sharing">here</a>.
+                            You should see a 'vg8k' folder once unzipped. It contains seed folder called 'seed3' that contains .json annotations suited for the dataloader used in our implementations. Also, download VG images from <a href="https://visualgenome.org/api/v0/api_home.html">here</a>
+                        </li>
+                    </ul>
+
+                    Further instructions about the dataset placing and also dataloader can be found in tthe README of starter code <a href="https://github.com/Vision-CAIR/LTVRR/tree/challenge-submission">here</a>.
+
+                </p> -->
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3 id="code">
+                    Baseline Code
+                </h3>
+                <!-- <p class="text-justify">
+                    You can find the starter code that can be used for submissions <a href="https://github.com/Vision-CAIR/LTVRR/tree/ltvrd-challenge-2023">here</a>. <i>Please follow the code as presented in the branch 'ltvrd-challenge-2023' for 
+                    creating an output in the format that is required for the submission</i>. For running the baseline models you can follows the README 
+                    instructions. You can also download some of the pre-trained models present there. After running the test file (here <i>test_net_rel.py</i>), the csv file to be used for submission would be named <i>rel_detections_gt_boxes_prdcls.csv</i>, 
+                    which to be renamed according to rules mentioned above. For any query regarding this, please feel free to contact the people mentioned below.
+                </p> -->
+                <hr>
+            </div>
+        </div>
+
+        <!-- <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Contact
+                </h3>
+                <p class="text-justify">
+                    <ul>
+                        <li>
+                            <a href="mailto:goel.arushi@gmail.com">goel.arushi@gmail.com</a>
+                        </li>
+                        <li>
+                            <a href="mailto:aagarwal@ma.iitr.ac.in">aagarwal@ma.iitr.ac.in</a>
+                        </li>
+                        <li>
+                            <a href="mailto:jun.chen@kaust.edu.sa">jun.chen@kaust.edu.sa</a>
+                        </li>
+                        <li>
+                            <a href="mailto:mohamed.elhoseiny@kaust.edu.sa">mohamed.elhoseiny@kaust.edu.sa</a>
+                        </li>
+                    </ul>
+                </p>
+                <hr>
+            </div>
+        </div> -->
+            
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Organizers
+                </h3>
+                <p class="text-justify">
+                    <ul>
+                        <li>
+                            Junshi Xia, RIKEN-AIP, Japan (<a href="mailto:junshi.xia@riken.jp">junshi.xia@riken.jp</a>)
+                        </li>
+                        <li>
+                            Clifford Broni-Bediako, RIKEN-AIP, Japan (<a href="mailto:clifford.broni-bediako@riken.jp">clifford.broni-bediako@riken.jp</a>)
+                        </li>
+                        <li>
+                            Jian Song, The Unversity of Tokyo, Japan 
+                        </li>
+                        <li>
+                            Hongruixuan Chen, The Unversity of Tokyo, Japan (<a href="mailto:qschrx@g.ecc.u-tokyo.ac.jp">qschrx@g.ecc.u-tokyo.ac.jp</a>)
+                        </li>
+                        <li>
+                            Naoto Yokaya, The Unversity of Tokyo/RIKEN-AIP, Japan (<a href="mailto:yokoya@k.u-tokyo.ac.jp">yokoya@k.u-tokyo.ac.jp</a>)
+                        </li>
+                    </ul>
+                </p>
+                <hr>
+            </div>
+        </div>
+        
+            
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Citation
+                </h3>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <!-- <textarea id="bibtex" class="form-control" readonly>
+                    @inproceedings{ltvrr2021,
+                        title={Exploring Long Tail Visual Relationship Recognition with Large Vocabulary},
+                        author={Abdelkarim, Sherif and Agarwal, Aniket and Achlioptas, Panos and Chen, Jun and Huang, Jiaji and Li, Boyang and Church, Kenneth and Elhoseiny, Mohamed},
+                        booktitle={Proceedings of the IEEE International Conference on Computer Vision},
+                        year={2021}
+                        }
+                    </textarea> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <p>
+                The website template was borrowed from <a href="http://mgharbi.com/">Michaël Gharbi</a>.
+                </p>
+            </div>
+        </div>
+
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-
-
-  <!-- Marketing messaging and featurettes
-  ================================================== -->
-  <!-- Wrap the rest of the page in another container to center all the content. -->
-
-  <div class="container marketing">
-  
-    <!-- Three columns of text below the carousel -->
-    <div class="row">
-      <div class="col-lg-4">
-        <!--<svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>-->
-        <img src="./assets/img/demo.webp" class="bd-placeholder-img rounded-circle" width="140" height="140" >
-
-        <h2 class="fw-normal">Research</h2>
-        <p>Get an overview of our research activities.</p>
-        <p><a class="btn btn-secondary" href="./research.html">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      
-      <div class="col-lg-4">
-        <!--<svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>-->
-        <img src="./assets/img/members.png" class="bd-placeholder-img rounded-circle" width="140" height="140" >
-
-        <h2 class="fw-normal">Members</h2>
-        <p>Check out our team members.</p>
-        <p><a class="btn btn-secondary" href="./team.html">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      
-      <div class="col-lg-4">
-        <!--<svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>-->
-        <img src="./assets/img/wanted.png" class="bd-placeholder-img rounded-circle" width="140" height="140" >
-
-        <h2 class="fw-normal">Opportunities</h2>
-        <p>Check out opportunities to join or collaborate with us.</p>
-        <p><a class="btn btn-secondary" href="./opportunity.html">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      
-    </div><!-- /.row -->
-
-    <!-- START THE FEATURETTES -->
-    
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <h2>Geoinformatics Team</h2>
-      <p class="lead">Geoinformatics Team was founded at RIKEN Center for Advanced Intelligence Project in January 2018. We are a research group specialized in remote sensing and geoinformatics. We aim to develop intelligent systems that automatically extract map information, such as land cover labels and elevation models, from remote sensing images acquired by spaceborne and airborne sensors. Our work is motivated by applications in Earth observation in order to respond to global challenges, such as disaster management and environmental assessment.</p>
-
-      <!--<div class="col-md-7">  
-      </div>
-      <div class="col-md-5">
-        <img src="./3d.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" >
-      </div>-->
-    </div>
-
-    <hr class="featurette-divider">
-
-    <!-- /END THE FEATURETTES -->
-
-  </div><!-- /.container -->
-
-
-  <!-- FOOTER -->
-  <footer class="container">
-    <!--<p class="float-end"><a href="#">Back to top</a></p>-->
-    <p>&copy; 2023 Geoinformatics Team</p>
-  </footer>
-</main>
-
-
-    <script src="./assets/dist/js/bootstrap.bundle.min.js"></script>
-
-      
-  </body>
+</body>
 </html>
