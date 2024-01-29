@@ -61,7 +61,7 @@
                 <ul class="list-inline">
                     <li>
                         <a href="#">
-                          Submission Portal
+                          Codalab Submission Portal
                         </a>
                     </li>
                     <li>
@@ -87,7 +87,7 @@
         <div class="row">
                 <!-- <div class="col-md-8 col-md-offset-2"> -->
                     <h4 class="col-md-8 col-md-offset-2">
-                        <b>Submission portal for development stage (1st Round) is opened!</b>
+                        <!-- <b>Submission portal for development stage is opened!</b> -->
                     </h4>
                     <!-- <image src="./assets/img/img3.jpg" class="img-responsive" alt="overview"></image>
                 </div> -->
@@ -102,26 +102,49 @@
                 </h3>
                 <p class="text-justify">
                     <!-- The challenge is part of Workshop on Learning with Limited Labelled Data for Image and Video Understanding, held at CVPR 2022. -->
-                    The <a href="https://open-earth-map.org/" target="_blank">OpenEarthMap</a> is a remote sensing (RS) semantic segmentation benchmark dataset consisting of 
-                    aerial/satellite images covering 97 regions from 44 countries across 6 continents at a spatial resolution of 0.25--0.5m ground sampling
-                    distance for global high-resolution land cover mapping. It presents an advancement in geographical diversity and annotation
-                    quality over existing benchmarks. OpenEarthMap benchmark models generalize worldwide and they can be used as an off-the-shelf
-                    model in a wide range of RS applications.
+                    The <a href="https://open-earth-map.org/" target="_blank">OpenEarthMap</a> is a remote sensing (RS) semantic segmentation 
+                    benchmark dataset consisting of aerial/satellite images covering 97 regions from 44 countries across 6 continents at a spatial resolution
+                    of 0.25--0.5m ground sampling distance for global high-resolution land cover mapping. It presents an advancement in geographical 
+                    diversity and annotation quality, enabling models to generalize worldwide. This challenge extends the land-cover semantic 
+                    segmentation task of the OpenEarthMap benchmark to few-shot multi-class semantic segmentation.
                 </p>
                 <p class="text-justify">
-                    This challenge is an extension of the 8-class land-cover semantic segmentation task of the OpenEarthMap benchmark.
-                    The aim of the challenge is to evaluate and benchmark learning methods for few-shot semantic segmentation on the OpenEarthMap dataset. 
-                    The motivation is to enable researchers to develop few-shot learning algorithms for high-resolution RS image semantic segmentation, 
-                    which is a very important problem in the applications of RS image analysis.
+                    The aim of the challenge is to evaluate and benchmark learning methods for few-shot semantic segmentation on the OpenEarthMap dataset,
+                    to promote research on geoinformatics for social good. The motivation is to enable researchers to develop few-shot learning algorithms 
+                    for high-resolution RS image semantic segmentation, which is a very important problem in the various applications of RS image analysis 
+                    such as disaster response, urban planning, and natural resource management.
                 </p>
-                <!-- <p>The 2021 IEEE GRSS Data Fusion Contest, organized by the Image Analysis and Data Fusion Technical Committee, aims to promote research
+                <p class="text-justify">
+                    Scientific papers describing the best entries will be included and presented at the "Workshop on Learning with Limited Labelled Data 
+                    for Image and Video Understanding (L3D-IVU)", and published in the CVPR 2024 Workshop Proceedings. 
+                </p> 
+                    <!-- The 2021 IEEE GRSS Data Fusion Contest, organized by the Image Analysis and Data Fusion Technical Committee, aims to promote research
                      on geospatial AI for social good. The global objective is to build models for understanding the state and changes of artificial
                       and natural environments from multimodal and multitemporal remote sensing data towards sustainable developments. The 2021 Data Fusion 
                       Contest will consist of two challenge tracks: Track 1: Automated landcover change detection and classification Track 2: End the darkness:
                        Detection of human settlements deprived of access to electricity Scientific papers describing the best entries will be included in
                        the Technical Program of IGARSS 2021, presented in an invited session “IEEE GRSS Data Fusion Contest,” and published in the IGARSS 2021 Proceedings.
 
-                    </p> -->
+                     In this challenge, we introduce \textit{new} land-cover classes 
+                    %({\textit{river, vehicle, sports venue, parking space, beach, railway, and fallow agriculture field}}) 
+                    into the OpenEarthMap dataset for multi-class few-shot RS semantic segmentation. Given the \textit{new} land-cover classes, the base classes 
+                    ${C_{train}}$ from which the meta-training set $\mathcal{D}_{train}$ is created and the target classes  $C_{test}$ from which the
+                     meta-test set $\mathcal{D}_{test}$ is created are disjoint sets (i.e., $C_{train}\ \cap\ C_{test} = \emptyset$). In a few-shot learning 
+                     setting of \textit{N}-way-\textit{K}-shot, the participants are required to submit the multi-class semantic segmentation results 
+                     of \textit{Q} query images (unlabelled) from the target classes $C_{test}$ using a support set with \textit{K} labelled images.
+                      The support \textit{K} labelled images (a.k.a train-set in the meta-test time episodes) are also from the target classes  
+
+                      For evaluation, we resort to the mean intersection-over-union (mIoU), which is the average value over the IoUs of all the target classes.
+                       Note that the mIoU is computed over the target classes only without the background. The setup code will provide a framework for generating
+                        a file in the format that is compatible with the evaluation server including all the metrics (class IoUs and mIoU) that are required.
+                         The challenge will be hosted on the Codalab platform. A template of the challenge page along with the server link can be
+                          found \href{https://codalab.lisn.upsaclay.fr/competitions/9121}{here}. The top-performing team will be awarded with certificates and prizes. 
+                          The prize award is still to be decided. The submitted papers will be peer-reviewed and the accepted ones, including non-winning teams' 
+                          papers, will be published in conjunction with CVPR 2024 proceedings. 
+
+                     The track aims to promote innovation in detection of human settlements deprived of access to electricity, as well as to provide objective
+                    and fair comparisons among methods. The ranking is based on quantitative accuracy parameters computed with respect to undisclosed test samples. 
+                    Participants will be given a limited time to submit their land cover maps after the competition started.   -->
                 <hr>
             </div>
         </div>
@@ -131,20 +154,19 @@
                 <h3>
                     Competition Phases
                 </h3>
-                <!-- <p class="text-justify">
-                    The track aims to promote innovation in detection of human settlements deprived of access to electricity, as well as to provide objective
-                    and fair comparisons among methods. The ranking is based on quantitative accuracy parameters computed with respect to undisclosed test samples. 
-                    Participants will be given a limited time to submit their land cover maps after the competition started. The contest will consist of two phases:
-                    Phase 1: Participants are provided with the SEN12MS dataset for training and additional validation images (without any corresponding 
-                    high-resolution labels) to train and validate their algorithms. Participants can submit prediction results for the validation set to the 
-                    Codalab competition website (https://competitions.codalab.org/competitions/22289) to get feedback on the performance. The performance of the 
-                    last submission from each account will be displayed on the leaderboard. In parallel, participants submit a short description of the approach 
-                    used to be eligible to enter Phases 2.
-                    Phase 2: Participants receive the test data set (without the corresponding ground truth) and submit their binary classification maps within 
-                    five days from the release of the test data set. After evaluation of the results, three winners from the two tracks are announced. 
-                    Following this, they will have one month to write their manuscript that will be included in the IGARSS proceedings. Manuscripts are 4-page 
-                    IEEE-style formatted. Each manuscript describes the addressed problem, the proposed method, and the experimental results.
-                </p> -->
+                <p class="text-justify">
+                    The contest consists of two phases:</br>
+                    <b>Phase 1 (Development Phase):</b> Participants are provided with the OpenEarthMap Few-Shot dataset for training and validation to train and 
+                    validate their algorithms (<i>See the <a href="#dataset">dataset section</a> for detailed description of the training set and validation set</i>).
+                    The participants can submit results on the validation set to the <a href="#" target="_blank">Codalab competition submission portal</a> 
+                    to get feedback on the performance. The performance of the last submission from each account will be displayed on the leaderboard. 
+                    In parallel, participants submit a <a href="#paper">short paper (4-page manuscript)</a> of the approach used to be eligible to enter Phases 2.
+                    The manuscripts will be included in the CVPR 2024 Workshop Proceedings.</br>
+                    <b>Phase 2 (Evaluation Phase):</b> Participants receive the testing set of the OpenEarthMap Few-Shot dataset 
+                    (<i>See the <a href="#dataset">dataset section</a> for detailed description of the testing set</i>). The participants submit their results on 
+                    the testing set to the <a href="#" target="_blank">Codalab competition submission portal</a> within <b>six days</b> from the release of the testing set.
+                    After evaluation of the results, the top three winners are announced.
+                </p>
                 <hr>
             </div>
         </div>
@@ -155,6 +177,7 @@
                     Important Dates
                 </h3>
                 <p class="text-justify">
+                    All the deadlines are strict, no extension will be given (11:59pm Pacific Time).
                     <ul>
                         <li>
                             <b>Feb 05, 2024:</b> Opening the challenge submission portal for the development phase.
@@ -169,7 +192,7 @@
                             <b>Mar 23, 2024:</b> Opening the challenge submission portal for the evaluation phase.
                         </li>
                         <li>
-                            <b>Mar 29, 2024:</b> The challenge submission deadline.
+                            <b>Mar 29, 2024:</b> Challenge submission deadline.
                         </li>
                         <li>
                             <b>Apr 07, 2024:</b> Paper notification to authors.
@@ -181,15 +204,11 @@
                             <b>Apr 21, 2024:</b> Challenge winner announcement.
                         </li>
                     </ul>
-                    Workshop: Tuesday June 18, 2024.
+                    L3D-IVU Workshop: Tuesday June 18, 2024.
                 </p>
                 <hr>
             </div>
         </div>
-
-<!-- Workshop Paper submission deadline: 6th March 2024, 11:59 pm Pacific Time.
-Notification to authors: 4th April 2024.
-Camera-ready deadline: 14th April 2024. -->
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -226,29 +245,6 @@ Camera-ready deadline: 14th April 2024. -->
                 <hr>
             </div>
         </div>
-                    <!-- We report the results on the subject, object, and relation separately of an (S,R,O) triplet on GQA-LT and VG8K-LT datasets. We evaluate
-                    the models using the average per-class accuracy across several frequency bands chosen based on frequency percentiles for GQA-LT and VG8K-LT, which can be seen below:
-                </p>
-                <center>
-                    <image src="img/gqa_split.png" class="img-responsive" alt="overview"></image>
-                    <figcaption>Table 1 - GQA-LT splits</figcaption>
-                </center>
-                <br>
-                <center>
-                    <image src="img/vg8k_split.png" class="img-responsive" alt="overview"></image>
-                    <figcaption>Table 2 - VG8K-LT splits</figcaption>
-                </center>
-                <br>
-                
-                <p class="text-justify">
-                    Hence the metrics <i>rel_many, rel_med, rel_few, rel_all_per_class</i> are calculated by taking into account Table 1 & 2 for relations, and <i>sbj_obj_many, sbj_obj_med, sbj_obj_few, sbj_obj_all_per_class</i>
-                    are calculated by taking into account Table 1 & 2 for sbj/obj. The other two metrics <i>rel_all_per_example</i> and <i>sbj_obj_all_per_example</i> are the standard metrics 
-                    that just average individual prediction scores that has been used in the literature. You can also find more info about the dataset and the metrics in the <a href='docs/supplementary_document.pdf'>supplementary document</a>.
-                </p>
-                <hr>
-            </div>
-        </div> -->
-
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -259,48 +255,23 @@ Camera-ready deadline: 14th April 2024. -->
                     The submission is supposed to be a csv file (named <i>rel_detections_gt_boxes_prdcls.csv</i> when the given evaluation code is run on starter code) that is to be renamed 
                     <b>answer.csv</b> and compressed into a .zip file (named <b>submission.zip</b>) before submission. No other format of submission will be accepted.
                 </p> -->
+                <!-- <p class="text-justify">
+                    You can find the starter code that can be used for submissions <a href="https://github.com/Vision-CAIR/LTVRR/tree/ltvrd-challenge-2023">here</a>. <i>Please follow the code as presented in the branch 'ltvrd-challenge-2023' for 
+                    creating an output in the format that is required for the submission</i>. For running the baseline models you can follows the README 
+                    instructions. You can also download some of the pre-trained models present there. After running the test file (here <i>test_net_rel.py</i>), the csv file to be used for submission would be named <i>rel_detections_gt_boxes_prdcls.csv</i>, 
+                    which to be renamed according to rules mentioned above. For any query regarding this, please feel free to contact the people mentioned below.
+                </p> -->
                 <hr>
             </div>
         </div>
 
-        <!-- <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Subission Format
-                </h3>
-                <p class="text-justify">
-                    The submission is supposed to be a csv file (named <i>rel_detections_gt_boxes_prdcls.csv</i> when the given evaluation code is run on starter code) that is to be renamed 
-                    <b>answer.csv</b> and compressed into a .zip file (named <b>submission.zip</b>) before submission. No other format of submission will be accepted.
-                </p>
-                <hr>
-            </div>
-        </div> -->
-
-        <!-- <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Metrics --Submission Portal--
-                </h3>
-                <p class="text-justify">
-                    <ul>
-                        <li>
-                            <b>Challenge 1:</b> GQA-LT Benchmark: <a href="https://codalab.lisn.upsaclay.fr/competitions/10821">Link</a>
-                        </li>
-                        <li>
-                            <b>Challenge 2:</b> VG8K-LT Benchmark: <a href="https://codalab.lisn.upsaclay.fr/competitions/10822">Link</a>
-                        </li>
-                    </ul>
-                </p>
-                <hr>
-            </div>
-        </div> -->
-
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <h3>
+                <h3 id="dataset">
                     The Dataset
                 </h3>
                 <!-- <p class="text-justify">
+                    The train set consists of images and their labels, which contains only the <i>base classes</i> for training the base model.
                     <ul>
                         <li>
                             <b>GQA-LT:</b> <br> You can download the annotations and splits necessary for the GQA-LT benchmark <a href="https://drive.google.com/file/d/1ypmMOq2TkZyLNVuU9agHS7_QcsfTtBmn/view?usp=sharing">here</a>.
@@ -338,21 +309,6 @@ Camera-ready deadline: 14th April 2024. -->
             </div>
         </div>
 
-        <!-- <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Subission Format 
-                </h3>
-                <p class="text-justify">
-                    You can find the starter code that can be used for submissions <a href="https://github.com/Vision-CAIR/LTVRR/tree/ltvrd-challenge-2023">here</a>. <i>Please follow the code as presented in the branch 'ltvrd-challenge-2023' for 
-                    creating an output in the format that is required for the submission</i>. For running the baseline models you can follows the README 
-                    instructions. You can also download some of the pre-trained models present there. After running the test file (here <i>test_net_rel.py</i>), the csv file to be used for submission would be named <i>rel_detections_gt_boxes_prdcls.csv</i>, 
-                    which to be renamed according to rules mentioned above. For any query regarding this, please feel free to contact the people mentioned below.
-                </p>
-                <hr>
-            </div>
-        </div> -->
-
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
@@ -386,8 +342,10 @@ Camera-ready deadline: 14th April 2024. -->
                 <h3 id="paper">
                     Challenge Paper Submission
                 </h3>
-                <div class="form-group col-md-10 col-md-offset-1">
-                    <!-- <textarea id="bibtex" class="form-control" readonly>
+                <!-- <p class="text-justify">
+                    Following this, they will have one month to write their manuscript that will be included in the IGARSS proceedings. Manuscripts are 4-page 
+                    IEEE-style formatted. Each manuscript describes the addressed problem, the proposed method, and the experimental results.
+
                    Important Dates:
                     Workshop Paper submission deadline: 6th March 2024, 11:59 pm Pacific Time.
                     Notification to authors: 4th April 2024.
@@ -408,8 +366,10 @@ Camera-ready deadline: 14th April 2024. -->
                     is valid only for full-length papers not published at CVPR 2024).
                     Short papers will be linked at the workshop webpage but will not be in the main conference proceedings.
                     Papers will be peer-reviewed under double-blind policy and must be submitted online through the CMT submission system.
-                    </textarea> -->
-                </div>
+
+                    Following this, they will have one month to write their manuscript that will be included in the IGARSS proceedings. Manuscripts are 4-page 
+                    IEEE-style formatted. Each manuscript describes the addressed problem, the proposed method, and the experimental results.
+                </p> -->
             </div>
         </div>
 
