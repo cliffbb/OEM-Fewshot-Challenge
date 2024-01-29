@@ -70,8 +70,13 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="https://github.com/cliffbb/OEM-Fewshot-Challenge">
                           Baseline Code
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#paper">
+                            Paper Submission
                         </a>
                     </li>
                 </ul>   
@@ -93,7 +98,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
-                    About
+                    About the Challenge
                 </h3>
                 <p class="text-justify">
                     <!-- The challenge is part of Workshop on Learning with Limited Labelled Data for Image and Video Understanding, held at CVPR 2022. -->
@@ -109,12 +114,37 @@
                     The motivation is to enable researchers to develop few-shot learning algorithms for high-resolution RS image semantic segmentation, 
                     which is a very important problem in the applications of RS image analysis.
                 </p>
-                <!-- <p>The main goal of this challenge is to evaluate and benchmark new and better methods for GQA-LT and VG8K-LT benchmarks 
-                    proposed in Exploring Long Tail Visual Relationship Recognition with Large Vocabulary. One high level motivation is
-                     to allow researchers to develop methods for long-tail visual relationship recognition - a very important problem for
-                     fine-grained image understanding. Both the benchmarks, GQA-LT and VG8K-LT, are long-tailed created out of GQA and VG datasets.
-                     With the presence of bounding boxes during both training and test time, the participants are required to submit a csv 
-                     file containing the detection results of subject/object and the relation classes in the corresponding triplet.</p> -->
+                <!-- <p>The 2021 IEEE GRSS Data Fusion Contest, organized by the Image Analysis and Data Fusion Technical Committee, aims to promote research
+                     on geospatial AI for social good. The global objective is to build models for understanding the state and changes of artificial
+                      and natural environments from multimodal and multitemporal remote sensing data towards sustainable developments. The 2021 Data Fusion 
+                      Contest will consist of two challenge tracks: Track 1: Automated landcover change detection and classification Track 2: End the darkness:
+                       Detection of human settlements deprived of access to electricity Scientific papers describing the best entries will be included in
+                       the Technical Program of IGARSS 2021, presented in an invited session “IEEE GRSS Data Fusion Contest,” and published in the IGARSS 2021 Proceedings.
+
+                    </p> -->
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Competition Phases
+                </h3>
+                <!-- <p class="text-justify">
+                    The track aims to promote innovation in detection of human settlements deprived of access to electricity, as well as to provide objective
+                    and fair comparisons among methods. The ranking is based on quantitative accuracy parameters computed with respect to undisclosed test samples. 
+                    Participants will be given a limited time to submit their land cover maps after the competition started. The contest will consist of two phases:
+                    Phase 1: Participants are provided with the SEN12MS dataset for training and additional validation images (without any corresponding 
+                    high-resolution labels) to train and validate their algorithms. Participants can submit prediction results for the validation set to the 
+                    Codalab competition website (https://competitions.codalab.org/competitions/22289) to get feedback on the performance. The performance of the 
+                    last submission from each account will be displayed on the leaderboard. In parallel, participants submit a short description of the approach 
+                    used to be eligible to enter Phases 2.
+                    Phase 2: Participants receive the test data set (without the corresponding ground truth) and submit their binary classification maps within 
+                    five days from the release of the test data set. After evaluation of the results, three winners from the two tracks are announced. 
+                    Following this, they will have one month to write their manuscript that will be included in the IGARSS proceedings. Manuscripts are 4-page 
+                    IEEE-style formatted. Each manuscript describes the addressed problem, the proposed method, and the experimental results.
+                </p> -->
                 <hr>
             </div>
         </div>
@@ -127,16 +157,16 @@
                 <p class="text-justify">
                     <ul>
                         <li>
-                            <b>Feb 05, 2024:</b> Opening the challenge submission portal for development phase (First Round).
+                            <b>Feb 05, 2024:</b> Opening the challenge submission portal for the development phase.
                         </li>
                         <li>
                             <b>Feb 05, 2024:</b> Opening paper submission (Call for the challenge paper).
                         </li>
                         <li>
-                            <b>Mar 22, 2024:</b> Paper submission deadline.
+                            <b>Mar 22, 2024:</b> Paper submission deadline (Submission deadline for the challenge paper).
                         </li>
                         <li>
-                            <b>Mar 23, 2024:</b> Opening the challenge submission portal for evaluation phase (Second Round).
+                            <b>Mar 23, 2024:</b> Opening the challenge submission portal for the evaluation phase.
                         </li>
                         <li>
                             <b>Mar 29, 2024:</b> The challenge submission deadline.
@@ -151,7 +181,7 @@
                             <b>Apr 21, 2024:</b> Challenge winner announcement.
                         </li>
                     </ul>
-                    Workshop: 19th June, 2024
+                    Workshop: Tuesday June 18, 2024.
                 </p>
                 <hr>
             </div>
@@ -164,7 +194,7 @@ Camera-ready deadline: 14th April 2024. -->
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
-                    Task <!--& Metrics-->
+                    Task & Metrics
                 </h3>
                 <!-- <p class="text-justify">
                     The main task for both of these benchmarks is to predict relationship and at the same time subject/object associated with the triplet. During training and evaluation,
@@ -223,7 +253,7 @@ Camera-ready deadline: 14th April 2024. -->
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
-                    Rules <!--Rules & Subission Format-->
+                    Rules of the Game <!--Rules & Subission Format-->
                 </h3>
                 <!-- <p class="text-justify">
                     The submission is supposed to be a csv file (named <i>rel_detections_gt_boxes_prdcls.csv</i> when the given evaluation code is run on starter code) that is to be renamed 
@@ -246,12 +276,12 @@ Camera-ready deadline: 14th April 2024. -->
             </div>
         </div> -->
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
-                    Metrics <!--Submission Portal-->
+                    Metrics --Submission Portal--
                 </h3>
-                <!-- <p class="text-justify">
+                <p class="text-justify">
                     <ul>
                         <li>
                             <b>Challenge 1:</b> GQA-LT Benchmark: <a href="https://codalab.lisn.upsaclay.fr/competitions/10821">Link</a>
@@ -260,15 +290,15 @@ Camera-ready deadline: 14th April 2024. -->
                             <b>Challenge 2:</b> VG8K-LT Benchmark: <a href="https://codalab.lisn.upsaclay.fr/competitions/10822">Link</a>
                         </li>
                     </ul>
-                </p> -->
+                </p>
                 <hr>
             </div>
-        </div>
+        </div> -->
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
-                    Dataset
+                    The Dataset
                 </h3>
                 <!-- <p class="text-justify">
                     <ul>
@@ -308,46 +338,81 @@ Camera-ready deadline: 14th April 2024. -->
             </div>
         </div>
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
-                    Subission Format <!--Baseline Code-->
+                    Subission Format 
                 </h3>
-                <!-- <p class="text-justify">
+                <p class="text-justify">
                     You can find the starter code that can be used for submissions <a href="https://github.com/Vision-CAIR/LTVRR/tree/ltvrd-challenge-2023">here</a>. <i>Please follow the code as presented in the branch 'ltvrd-challenge-2023' for 
                     creating an output in the format that is required for the submission</i>. For running the baseline models you can follows the README 
                     instructions. You can also download some of the pre-trained models present there. After running the test file (here <i>test_net_rel.py</i>), the csv file to be used for submission would be named <i>rel_detections_gt_boxes_prdcls.csv</i>, 
                     which to be renamed according to rules mentioned above. For any query regarding this, please feel free to contact the people mentioned below.
-                </p> -->
-                <hr>
-            </div>
-        </div>
-
-        <!-- <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Contact
-                </h3>
-                <p class="text-justify">
-                    <ul>
-                        <li>
-                            <a href="mailto:goel.arushi@gmail.com">goel.arushi@gmail.com</a>
-                        </li>
-                        <li>
-                            <a href="mailto:aagarwal@ma.iitr.ac.in">aagarwal@ma.iitr.ac.in</a>
-                        </li>
-                        <li>
-                            <a href="mailto:jun.chen@kaust.edu.sa">jun.chen@kaust.edu.sa</a>
-                        </li>
-                        <li>
-                            <a href="mailto:mohamed.elhoseiny@kaust.edu.sa">mohamed.elhoseiny@kaust.edu.sa</a>
-                        </li>
-                    </ul>
                 </p>
                 <hr>
             </div>
         </div> -->
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Results, Awards, & Prizes
+                </h3>
+                <!-- <p class="text-justify">
+                    
+                    The following eight teams will be declared as winners:
+                    The first, second, third, and fourth ranked teams in Track 1
+                    The first, second, third, and fourth ranked teams in Track 2
+                    The authors of the eight winning submissions will:
+                    Present their manuscripts in an invited session dedicated to the Contest at IGARSS 2021
+                    Publish their manuscripts in the Proceedings of IGARSS 2019
+                    Be awarded IEEE Certificates of Recognition.
+                    The authors of the first and second ranked teams in both tracks will:
+                    Receive as a prize (TBD!!).
+                    Co-author journal papers (in a limit of 3 co-authors per submission), which will summarize the outcome of the Contest 
+                    and will be submitted to IEEE JSTARS. To maximize impact and promote research in geospatial AI for social good, 
+                    the open-access option will be used for this journal submission.
+                    
+                    Top ranked teams will be awarded during IGARSS 2021, Brussels, Belgium in July 2020. The costs for open-access
+                     publication will be supported by the GRSS. The winner team prize is kindly sponsored by the IGARSS 2021 team.
+                    
+                </p> -->
+                <hr>
+            </div>
+        </div>
             
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3 id="paper">
+                    Challenge Paper Submission
+                </h3>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <!-- <textarea id="bibtex" class="form-control" readonly>
+                   Important Dates:
+                    Workshop Paper submission deadline: 6th March 2024, 11:59 pm Pacific Time.
+                    Notification to authors: 4th April 2024.
+                    Camera-ready deadline: 14th April 2024.
+                    CMT3 Submission: https://cmt3.research.microsoft.com/L3DIVUCVPR2024/ 
+                    We encourage submissions that are under one of the topics of interest, but also we welcome other interesting and 
+                    relevant research for learning with limited labelled data.
+                    Accepted papers will be presented at the poster session, some as orals, and one paper will be awarded as the best paper.
+                    Submission Guidelines:
+                    We accept submissions of max 8 pages (excluding references). We encourage authors to submit a 4-page work as well.
+                    We accept dual submissions to CVPR 2024 and L3D-IVU 2024.
+                    Submitted manuscript should follow the CVPR 2024 paper template.
+                    Submissions will be rejected without review if they:
+                    Contain more than 8 pages (excluding references).
+                    Violate the double-blind policy.
+                    Violate the dual-submission policy for papers with more than 4 pages excluding references.
+                    The accepted papers will be in the main conference workshops proceedings if the authors agree (this option 
+                    is valid only for full-length papers not published at CVPR 2024).
+                    Short papers will be linked at the workshop webpage but will not be in the main conference proceedings.
+                    Papers will be peer-reviewed under double-blind policy and must be submitted online through the CMT submission system.
+                    </textarea> -->
+                </div>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
@@ -376,28 +441,27 @@ Camera-ready deadline: 14th April 2024. -->
             </div>
         </div>
         
-            
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
                     Citation
                 </h3>
                 <div class="form-group col-md-10 col-md-offset-1">
-                    <!-- <textarea id="bibtex" class="form-control" readonly>
+                    <textarea id="bibtex" class="form-control" readonly>
                     @inproceedings{ltvrr2021,
                         title={Exploring Long Tail Visual Relationship Recognition with Large Vocabulary},
                         author={Abdelkarim, Sherif and Agarwal, Aniket and Achlioptas, Panos and Chen, Jun and Huang, Jiaji and Li, Boyang and Church, Kenneth and Elhoseiny, Mohamed},
                         booktitle={Proceedings of the IEEE International Conference on Computer Vision},
                         year={2021}
                         }
-                    </textarea> -->
+                    </textarea>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <p>
+                <p style="font-size: x-small;">
                 The website template was borrowed from <a href="http://mgharbi.com/">Michaël Gharbi</a>.
                 </p>
             </div>
