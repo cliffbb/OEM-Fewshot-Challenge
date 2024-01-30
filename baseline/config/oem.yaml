@@ -1,0 +1,33 @@
+DATA:
+  data_name: OpenEarthMap few-shot challenge
+  data_root: /data/ggeoinfo/LULC-RIKEN/few_shot_challenge/challenge/testset/
+  images_dir: images/
+  labels_dir: labels/
+  data_list_path: data_split/test.json
+  workers: 4
+  image_size: 1024
+  mean: [0.4449, 0.4570, 0.3919] 
+  std: [0.1662, 0.1492, 0.1505] 
+  pin_memory: True
+
+MODEL:
+  model_name: PSPNet
+  encoder_name: efficientnet-b4
+  pretrained: /home/cliffbb/few-shot/OEM-DIaM/src/model/model_ckpt/model.best.pth
+
+EVALUATION:
+  shot: 5   # Only 5-shot is allowed
+  batch_size_val: 1  # Only batch size 1 is supported for saving the predictions
+  shuffle_test_data: True
+  manual_seed: 2024
+  gpus: [0]
+  preds_dir: results/
+  save_ious: base_novel_ious.txt  
+
+CLASSIFIER:
+  weights: [100, 1, 1, 100]  
+  adapt_iter: 400
+  cls_lr: 0.003  #0.003  #0.0129  #0.00125
+  pi_estimation_strategy: self
+  pi_update_at: [10]
+  fine_tune_base_classifier: True
