@@ -1,21 +1,15 @@
 .idea/
-my_notes.txt
 
 model_ckpt/
-visualization/
 results/
-backup/
-initmodel/
-data/pascal/*
-data/coco/*
 
 !.gitignore
-!data/coco/*.py
 
 *.zip
 *.pkl
 *.tar.gz
 *.npy
+*.pth
 /*.png
 
 .DS_Store
