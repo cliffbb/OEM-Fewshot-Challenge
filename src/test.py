@@ -16,13 +16,13 @@ import torch.nn.parallel
 import torch.utils.data
 from torch.nn.parallel import DistributedDataParallel as DDP
 
-from classifier import Classifier
-from model.pspnet import get_model
-from utils import (fast_intersection_and_union, setup_seed, ensure_dir, 
+from .classifier import Classifier
+from .model.pspnet import get_model
+from .utils import (fast_intersection_and_union, setup_seed, ensure_dir, 
                   resume_random_state, find_free_port, setup, cleanup, get_cfg)
 
-from dataset.data import get_val_loader
-from dataset.classes import classId2className, update_novel_classes
+from .dataset.data import get_val_loader
+from .dataset.classes import classId2className, update_novel_classes
 
 
 def parse_args():

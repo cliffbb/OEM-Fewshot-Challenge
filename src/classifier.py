@@ -3,7 +3,7 @@ from typing import Tuple
 import torch
 import torch.nn.functional as F
 
-from utils import compute_wce, to_one_hot
+from .utils import compute_wce, to_one_hot
 
 
 class Classifier(object):
