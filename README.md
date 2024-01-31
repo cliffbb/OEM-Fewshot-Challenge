@@ -6,6 +6,7 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/a-strong-baseline-for-generalized-few-shot/generalized-few-shot-semantic-segmentation-on-3)](https://paperswithcode.com/sota/generalized-few-shot-semantic-segmentation-on-3?p=a-strong-baseline-for-generalized-few-shot) -->
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]()
+[pre-trained mode]('https://drive.google.com/file/d/1eLjfUJ2ajAMkJKCsoJr-MGSSzZ-LqDbR/view?usp=drive_link')
 <!-- 
 # DIaM for Generalized Few-Shot Semantic Segmentation
 

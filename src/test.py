@@ -22,7 +22,7 @@ from utils import (fast_intersection_and_union, setup_seed, ensure_dir,
                   resume_random_state, find_free_port, setup, cleanup, get_cfg)
 
 from dataset.data import get_val_loader
-from dataset.classes import classId2className
+from dataset.classes import classId2className, update_novel_classes
 
 
 def parse_args():
@@ -60,6 +60,7 @@ def main_worker(rank: int, world_size: int, args: argparse.Namespace) -> None:
 
 def validate(args: argparse.Namespace, val_loader: torch.utils.data.DataLoader, model: DDP) -> Tuple[torch.tensor, torch.tensor]:
     print('\n==> Start testing...', flush=True)
+    base_novel_classes = classId2className
     random_state = setup_seed(args.manual_seed, return_old_state=True)
     device = torch.device('cuda:{}'.format(dist.get_rank()))
     model.eval()
@@ -116,9 +117,9 @@ def validate(args: argparse.Namespace, val_loader: torch.utils.data.DataLoader, 
         logits = classifier.get_logits(features_q).detach()
         probas = classifier.get_probas(logits)
 
-        if args.preds_dir is not None:
-            ensure_dir(os.path.join(args.preds_dir, 'targets'))
-            ensure_dir(os.path.join(args.preds_dir, 'preds'))
+        if args.save_pred_maps is True:    # Save predictions in '.png' file and submit for evaluation
+            ensure_dir('results/targets')
+            ensure_dir('results/preds')
             n_task, shots, num_classes, h, w = probas.size()
             H, W = gt_q.size()[-2:]
             if (h, w) != (H, W):
@@ -128,8 +129,8 @@ def validate(args: argparse.Namespace, val_loader: torch.utils.data.DataLoader, 
             pred = np.array(pred.squeeze().cpu(), np.uint8)
             target = np.array(gt_q.squeeze().cpu(), np.uint8)
             fname = ''.join(image_name)
-            cv2.imwrite(os.path.join(args.preds_dir, 'targets', fname + '.png'), target)
-            cv2.imwrite(os.path.join(args.preds_dir, 'preds', fname + '.png'), pred)
+            cv2.imwrite(os.path.join('results/targets', fname + '.png'), target)
+            cv2.imwrite(os.path.join('results/preds', fname + '.png'), pred)
 
         intersection, union, target = fast_intersection_and_union(probas, gt_q)  # [batch_size_val, 1, num_classes]
         intersection, union, target = intersection.squeeze(1).cpu(), union.squeeze(1).cpu(), target.squeeze(1).cpu()
@@ -141,12 +142,18 @@ def validate(args: argparse.Namespace, val_loader: torch.utils.data.DataLoader, 
     results = []
     results.append('\nClass IoU Results')
     results.append('---------------------------------------')
+    
+    if args.novel_classes is not None:  # Update novel classnames
+       update_novel_classes(base_novel_classes, args.novel_classes)
+  
     for i, class_ in enumerate(val_loader.dataset.all_classes):
         if class_ == 0:
             continue
         
         IoU = cls_intersection[i] / (cls_union[i] + 1e-10)
-        classname = classId2className[class_].capitalize()
+        classname = base_novel_classes[class_].capitalize()
+        if classname == '':
+            classname = 'Novel class'
         results.append(f'%d %-25s \t %.2f' %(i, classname, IoU * 100))
         
         if class_ in val_loader.dataset.base_class_list:
@@ -165,9 +172,9 @@ def validate(args: argparse.Namespace, val_loader: torch.utils.data.DataLoader, 
     iou_results = "\n".join(results)
     print(iou_results)
     
-    if args.save_ious:
-        ensure_dir(args.preds_dir)
-        with open(os.path.join(args.preds_dir, args.save_ious), 'w') as f:
+    if args.save_ious is True:  # Save class IoUs
+        ensure_dir('results')
+        with open(os.path.join('results', 'base_novel_ious.txt'), 'w') as f:
             f.write(iou_results)
     
     print('\n===> Runtime --- {:.1f}\n'.format(runtime))

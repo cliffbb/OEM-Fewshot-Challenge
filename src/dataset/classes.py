@@ -1,5 +1,4 @@
-from collections import defaultdict
-from typing import Dict, Any, List
+from typing import Dict, Any 
 
 
 classId2className = {
@@ -11,37 +10,22 @@ classId2className = {
                     5: 'road type 1', 
                     6: 'sea, lake, & pond', 
                     7: 'building type 1',                                                   
-                    # Novel classes 
-                    8: 'road type 2', 
-                    9: 'river', 
-                    10: 'boat & ship',
-                    11: 'agric land type 2'
+                    # Novel classes (classnames to be updated, see config file 'oem.yaml')
+                    8: '', 
+                    9: '', 
+                    10: '',
+                    11: ''
                     }
 
 
-className2classId = defaultdict(dict)
-for id in classId2className:
-    className2classId[classId2className[id]] = id
-
-
-def get_base_classnames() -> List[str]:
+def update_novel_classes(classId2className, novel_classes: Dict[int, str]) -> None: 
+    """    
+    input :
+        classId2className: Dict
+        novel_classes : Dict of novel classes (Id2Name)    
     """
-    Returns the names of base classes
-    returns :
-         base_classes : List.
-    """
-    base_classes = list(classId2className.values())[:7]
-    return base_classes
-
-
-def get_novel_classnames() -> List[str]:
-    """
-    Returns the names of novel classes for development/evaluation stage
-    returns :
-         novel_classes : List.
-    """
-    novel_classes = list(classId2className.values())[7:]
-    return novel_classes
+    for k, v in novel_classes.items():
+        classId2className[int(k)] = v
 
 
 def get_classes_split() -> Dict[str, Any]:
