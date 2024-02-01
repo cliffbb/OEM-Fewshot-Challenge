@@ -19,10 +19,16 @@ This repository contains the baseline model code for the OpenEarthMap land cover
 
 
 ### Baseline Code adopted from ...
+Run from a terminal, use the `test.sh` script, which its general syntax is:
+```bash
+bash test.sh 
+```
 
+<!-- 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cliffbb/OEM-Fewshot-Challenge/blob/master/test.ipynb)
 [pre-trained mode]('https://drive.google.com/file/d/1eLjfUJ2ajAMkJKCsoJr-MGSSzZ-LqDbR/view?usp=drive_link')
-<!-- 
+
+
 # DIaM for Generalized Few-Shot Semantic Segmentation
 
 This repository contains the code for our **CVPR 2023** paper, [A Strong Baseline for Generalized Few-Shot Semantic Segmentation](https://arxiv.org/abs/2211.14126).
