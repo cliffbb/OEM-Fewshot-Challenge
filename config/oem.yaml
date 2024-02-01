@@ -1,10 +1,10 @@
 DATA:
   data_name: OpenEarthMap few-shot challenge
-  data_root:  /home/cliffbb/fewshot/challenge/valset/ # Download the 'valset' and set your data_root to the 'valtset' folder
+  data_root:  # Download the 'valset' and set your data_root to the 'valtset' folder
   images_dir: images/  
   labels_dir: labels/
   data_list_path: data/val.json
-  novel_classes:   # Change the novel class names for Validation/Testing. The current class names are Validation classes
+  novel_classes:   # Change the novel classnames for Validation/Testing. The current classnames are Validation classes
     8: 'road type 2'        
     9: 'river'               
     10: 'boat & ship'       
@@ -18,7 +18,7 @@ DATA:
 MODEL:
   model_name: PSPNet
   encoder_name: efficientnet-b4
-  pretrained: /home/cliffbb/OEM-Fewshot-Challenge/src/model/model_ckpt/model.best.pth # Download the model, place in the 'model_ckpt' folder
+  pretrained:  # Download the model and set the pretrained path to `model.best.pth` file
 
 EVALUATION:
   shot: 5   # Only 5-shot is allowed
