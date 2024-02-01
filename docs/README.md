@@ -1,2 +1,0 @@
-## OpenEarthMap Land Cover Mapping Few-Shot Challenge
-## Co-organized with the [L3D-IVU CVPR 2024](https://sites.google.com/view/l3divu2024/overview) Workshop

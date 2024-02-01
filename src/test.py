@@ -1,4 +1,3 @@
-import _init_paths
 import os
 import cv2
 import time
@@ -165,10 +164,17 @@ def validate(args: argparse.Namespace, val_loader: torch.utils.data.DataLoader, 
             
     avg_base_IoU, avg_novel_IoU = sum_base_IoU / base_count, sum_novel_IoU / novel_count
     agg_mIoU = (avg_base_IoU + avg_novel_IoU) / 2
+    wght_avg_base_IoU, wght_avg_novel_IoU = avg_base_IoU * 0.6, avg_novel_IoU * 0.4
+    wght_agg_mIoU = (wght_avg_base_IoU + wght_avg_novel_IoU) / 2
+    
     results.append('---------------------------------------')
     results.append(f'\n%-30s \t %.2f' %('Average of base IoU', avg_base_IoU * 100))
     results.append(f'%-30s \t %.2f' %('Average of novel IoU', avg_novel_IoU * 100))
     results.append(f'%-30s \t %.2f' %('Overall mean IoU', agg_mIoU * 100))
+    results.append(f'\n%-30s \t %.2f' %('Weighted average of base IoU', wght_avg_base_IoU * 100))
+    results.append(f'%-30s \t %.2f' %('Weighted average of novel IoU', wght_avg_novel_IoU * 100))
+    results.append(f'%-30s \t %.2f' %('Weighted overall mean IoU', wght_agg_mIoU * 100))
+    results.append(f'The weighted average is calculated using `0.6:0.4 => base:novel` based on SOA GFSS baseline.')
     iou_results = "\n".join(results)
     print(iou_results)
     

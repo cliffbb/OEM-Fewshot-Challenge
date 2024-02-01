@@ -1,5 +1,7 @@
-## OpenEarthMap Land Cover Mapping Few-Shot Challenge [(L3D-IVU CVPR 2024)](https://sites.google.com/view/l3divu2024/overview) Baseline Code
+## OpenEarthMap Land Cover Mapping Few-Shot Challenge 
+## Co-organized with the [L3D-IVU CVPR 2024](https://sites.google.com/view/l3divu2024/overview) Workshop
 
+### Baseline Code adopted from ...
 <!-- [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/a-strong-baseline-for-generalized-few-shot/generalized-few-shot-semantic-segmentation-on)](https://paperswithcode.com/sota/generalized-few-shot-semantic-segmentation-on?p=a-strong-baseline-for-generalized-few-shot)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/a-strong-baseline-for-generalized-few-shot/generalized-few-shot-semantic-segmentation-on-1)](https://paperswithcode.com/sota/generalized-few-shot-semantic-segmentation-on-1?p=a-strong-baseline-for-generalized-few-shot)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/a-strong-baseline-for-generalized-few-shot/generalized-few-shot-semantic-segmentation-on-2)](https://paperswithcode.com/sota/generalized-few-shot-semantic-segmentation-on-2?p=a-strong-baseline-for-generalized-few-shot)
