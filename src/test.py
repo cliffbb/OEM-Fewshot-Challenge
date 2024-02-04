@@ -165,7 +165,7 @@ def validate(args: argparse.Namespace, val_loader: torch.utils.data.DataLoader, 
     base_mIoU, novel_mIoU = sum_base_IoU / base_count, sum_novel_IoU / novel_count
     agg_mIoU = (base_mIoU + novel_mIoU) / 2
     wght_base_mIoU, wght_novel_mIoU = base_mIoU * 0.4, novel_mIoU * 0.6
-    wght_sum_mIoU = (wght_base_mIoU + wght_novel_mIoU) / 2
+    wght_sum_mIoU = wght_base_mIoU + wght_novel_mIoU
     
     results.append('---------------------------------------')
     results.append(f'\n%-30s \t %.2f' %('Base mIoU', base_mIoU * 100))
@@ -174,8 +174,7 @@ def validate(args: argparse.Namespace, val_loader: torch.utils.data.DataLoader, 
     results.append(f'\n%-30s \t %.2f' %('Weighted Base mIoU', wght_base_mIoU * 100))
     results.append(f'%-30s \t %.2f' %('Weighted Novel mIoU', wght_novel_mIoU * 100))
     results.append(f'%-30s \t %.2f' %('Weighted-sum of Base-and-Novel mIoU', wght_sum_mIoU * 100))
-    results.append(f'The weighted scores are calculated using `0.4:0.6 => base:novel`, \n 
-                     which are derived from the results presented in the SOA GFSS paper adopted as baseline.')
+    results.append(f'The weighted scores are calculated using `0.4:0.6 => base:novel`, which are derived\nfrom the results presented in the SOA GFSS paper adopted as baseline.')
     iou_results = "\n".join(results)
     print(iou_results)
     
