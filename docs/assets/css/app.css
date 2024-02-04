@@ -79,7 +79,9 @@ body,
 td,
 th,
 tr,
-p {
+p,
+ul,
+li {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 16px
 }
@@ -157,10 +159,9 @@ span.highlight {
 	margin-left: 0.5em;
 	margin-right: 0.5em;
 }
-/* 
-#oem-bkg {
-  /* Background pattern from Toptal Subtle Patterns 
-  background-image: url("../img/img2.jpg");
-  height: 400px;
-  width: 100%;
-} */
+
+br {
+  display: block; /* makes it have a width */
+  content: ""; /* clears default height */
+  margin-top: 10px; /* change this to whatever height you want it */
+}
