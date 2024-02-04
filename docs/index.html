@@ -97,15 +97,15 @@
                     benchmark dataset consisting of aerial/satellite images covering 97 regions from 44 countries across 6 continents at a spatial resolution
                     of 0.25&ndash;0.5m ground sampling distance for global high-resolution land cover mapping. It presents an advancement in geographical 
                     diversity and annotation quality, enabling models to generalize worldwide. This challenge extends the original RS semantic 
-                    segmentation task of the OpenEarthMap benchmark to generalized few-shot semantic segmentation (GFSS) task in RS image understanding.
-                </p>
-                <p class="text-justify">
+                    segmentation task of the OpenEarthMap benchmark to generalized few-shot semantic segmentation (GFSS) task in RS image understanding.</br>
+                <!-- </p>
+                <p class="text-justify"> -->
                     The challenge aims to evaluate and benchmark learning methods for few-shot semantic segmentation on the OpenEarthMap dataset
                     to promote research in AI for social good. The motivation is to enable researchers to develop few-shot learning algorithms 
                     for high-resolution RS image semantic segmentation, which is a fundamental problem in various applications of RS image understanding,
-                    such as disaster response, urban planning, and natural resource management.
-                </p>
-                <p class="text-justify">
+                    such as disaster response, urban planning, and natural resource management.</br>
+                <!-- </p>
+                <p class="text-justify"> -->
                     The challenge is part of the <a href="https://sites.google.com/view/l3divu2024/overview" target="_blank">3rd Workshop on Learning with Limited 
                     Labelled Data for Image and Video Understanding (L3D-IVU)</a> in conjunction with CVPR 2024. Scientific papers describing the best entries 
                     will be included and presented at the L3D-IVU CVPR 2024 Workshop, and published in the CVPR 2024 Workshops Proceedings. 
@@ -177,7 +177,7 @@
                     </ul>
                 </p>
                 <p class="text-justify">
-                    The L3D-IVU Workshop is on Tuesday June 18, 2024.
+                    The L3D-IVU Workshop is on Tuesday, June 18, 2024.
                 </p>
                 <hr>
             </div>
@@ -194,7 +194,7 @@
                     segmentation maps of all images in a given <i>query set</i> (Note, the labels for the images in the <i>query set</i> are 
                     withheld and to be used for evaluation). For a `5-shot 4-way` few-shot learning task, the <i>support set</i> consists of 20 image-label
                     pair examples, 5-pair examples for each of the 4 novel classes. The labels for each image in the <i>support set</i> do not contain
-                    any of the base classes. Also, the labels of a particular 5-pair examples for a particular novel class contain only that novel class 
+                    any of the base classes. Also, the labels of particular 5-pair examples for a particular novel class contain only that novel class 
                     (i.e., one novel class per 5-pair examples). However, the labels for the images in the <i>query set</i> contain both the base classes
                     and the novel classes.</br>
 
@@ -208,7 +208,7 @@
                     to predict the segmentation maps of a 80-image <i>query set</i>, which also contains both base classes and novel classes. Note that both the 
                     <i>support set</i> and <i>query set</i> for the development phase are different from the <i>support set</i> and <i>query set</i> for 
                     the final evaluation phase. Here, the participants can submit their results for final evaluation. The performance of the best submission 
-                    from each submission account will be displayed on the leaderboard. See the <a href="#rules">challenge rules</a> for the results format to be submmited to
+                    from each submission account will be displayed on the leaderboard. See the <a href="#rules">challenge rules</a> for the results format to be submitted to
                     the <a href="#" target="_blank">Codalab competition submission portal</a>.
                 </p>
                 <p class="text-justify">
@@ -232,7 +232,7 @@
                     score for the performance evaluation and ranking, we resort to a <i>weighted-sum</i> of <b>base mIoU</b> and <b>novel mIoU</b>, which is 
                     computed using 0.4:0.6 weights for the base classes and the novel classes, respectively (0.4*<b>base mIoU</b> + 0.6*<b>novel mIoU</b>). 
                     The weights are derived from the state-of-the-art results presented in the
-                    <a href="https://arxiv.org/pdf/2211.14126.pdf" target="_blank">GFSS baseline</a> adopted in this challenege.</br>
+                    <a href="https://arxiv.org/pdf/2211.14126.pdf" target="_blank">GFSS baseline</a> adopted in this challenge.</br>
                     
                     Note that the top winners are determined not only on the performance on the leaderboard, but in addition to the novelty of 
                     their proposed method described in their submitted manuscripts.
@@ -272,13 +272,13 @@
                             Each team can make only 10 submissions in the evaluation phase. No submissions limit in the development phase.
                         </li>
                         <li>
-                            The best submission of a team in the evaluation phase is used to rank the team and it is selected for the final evaluation.
+                            The best submission of a team in the evaluation phase is used to rank the team, and it is selected for the final evaluation.
                         </li>
                         <li>
                             The top winners are determined by both the performance on the leaderboard and the novelty of their proposed method.
                         </li>
                         <li>
-                            Top winners will be ask to submit their codes for cross-checking their results.
+                            Top winners will be asked to submit their codes for cross-checking their results.
                         </li>                       
                         <li>
                             The best top-winner submission must exceed the baseline score of the challenge to be eligible for the challenge prize.
@@ -299,7 +299,7 @@
                 </h3>
                 <p class="text-justify">
                     The OpenEarthMap few-shot learning challenge dataset consists of only 408 samples of the original
-                    <a href="https://open-earth-map.org/" target="_blank">OpenEarthMap benchmark</a> dataset for RS image semantic segmentation.
+                    <a href="https://open-earth-map.org/" target="_blank">OpenEarthMap</a> benchmark dataset for RS image semantic segmentation.
                     The challenge dataset extends the original 8 semantic classes of the OpenEarthmap benchmark to 13 classes, which is  
                     split into 7:4:4 for <i>train_base_class</i>, <i>val_novel_class</i>, and <i>test_novel_class</i> disjointed sets, respectively
                     (i.e., <i>train_base_class</i> &cap; <i>val_novel_class</i> &cap; <i>test_novel_class</i> &equals; &empty;). 
@@ -325,16 +325,16 @@
                 </h3>
                 <p class="text-justify">
                     A GFSS framework, called <a href="https://arxiv.org/pdf/2211.14126.pdf" target="_blank">distilled information maximization (DIaM)</a>, 
-                    with a PSPNet architecture of EfficientNet-B4 encoder from the pytorch segmentation models library is presented 
+                    with a PSPNet architecture of EfficientNet-B4 encoder from the PyTorch segmentation models library is presented 
                     as a baseline model. The baseline code can be used as a starter code for the challenge submission. To run it, follow the
                     README instructions presented <a href="https://github.com/cliffbb/OEM-Fewshot-Challenge" target="_blank">here</a> or simply
                     <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank">
                         <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"/>.
                     </a> 
-                    After runing the code, an output folder ``results`` which contains ``preds`` and ``targets`` folders of the model's segmentation 
-                    prediction maps and the coresponding targets, respectively, are created. Based on the rules mentioned above, only the ``preds`` folder 
+                    After running the code, an output folder ``results`` which contains ``preds`` and ``targets`` folders of the model's segmentation 
+                    prediction maps and the corresponding targets, respectively, are created. Based on the rules mentioned above, only the ``preds`` folder 
                     which contains the predicted segmentation maps in `.png` file format is required for the submission. Please feel free to contact 
-                    the challenge oganizers for any question regarding the baseline code.
+                    the challenge organizers for any question regarding the baseline code.
                 </p>
                 <hr>
             </div>
@@ -346,9 +346,9 @@
                     Results, Awards, &amp; Prizes
                 </h3>
                 <p class="text-justify">
-                    Five teams will be declared as winners: the 1st, 2nd, 3rd, 4th, and 5th ranked teams.
-                </p>
-                <p class="text-justify">
+                    Five teams will be declared as winners: the 1st, 2nd, 3rd, 4th, and 5th ranked teams.</br>
+                <!-- </p>
+                <p class="text-justify"> -->
                     The authors of the 1st &amp; 2nd teams will present their manuscripts in oral, and the 3rd, 4th &amp; 5th teams
                     as poster at the L3D-IVU CVPR 2024 Workshop session.</br>
 
@@ -364,7 +364,7 @@
                     <!-- The details will be made available on the workshop website (<strong>TBA</strong>).  -->
                     <!-- The prizes is kindly sponsored by the... -->
 
-                    The authors of the 3rd, 4th, &amp; 5th teams will be invited to co-author a journal paper (limitted to 2 co-authors per a team), which will summarize
+                    The authors of the 3rd, 4th, &amp; 5th teams will be invited to co-author a journal paper (limited to 2 co-authors per a team), which will summarize
                     the outcome of the Challenge and will be submitted to <a href="https://www.sciencedirect.com/journal/neurocomputing" target="_blank">Neurocomputing</a>. 
                     To maximize impact and promote research in AI for social good, the open-access option will be used for this journal submission.
                 </p>
@@ -395,7 +395,7 @@
                             Manuscripts are limited to 8-page maximum (excluding references).
                         </li>
                         <li>
-                            Manuscripts must be conform to single-blind review policy.
+                            Manuscripts must be conformed to single-blind review policy.
                         </li>
                         <li>
                             Manuscripts should follow the CVPR 2024 paper style. Download a modified version for the purpose of this challenge 
@@ -408,7 +408,7 @@
                             Supplementary material is not allowed. 
                         </li>
                         <li>
-                            Submmited manuscripts will be rejected without review if they: <i>do not have accompanied challenge submissions</i>;
+                            Submitted manuscripts will be rejected without review if they: <i>do not have accompanied challenge submissions</i>;
                             <i>exceed the page limit and/or not in the CVPR 2024 paper style provided</i>; and <i>violate the single-blind policy</i>.
                         </li>
                     </ul>
