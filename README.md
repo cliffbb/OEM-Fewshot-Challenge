@@ -1,7 +1,7 @@
 <div align="center">
 	
 ## OpenEarthMap Land Cover Mapping Few-Shot Challenge </br> Generalized Few-shot Semantic Segmentation
-### Challenge proposed by the [Geoinformatics Team of RIKEN-AIP](https://geoinformatics2018.com/) and co-organized with the [3rd L3D-IVU Workshop](https://sites.google.com/view/l3divu2024/overview) @ CVPR 2024 Conference
+### Challenge proposed by the [Geoinformatics Team of RIKEN-AIP](https://geoinformatics2018.com/) and co-organized </br> with the [3rd L3D-IVU Workshop](https://sites.google.com/view/l3divu2024/overview) @ CVPR 2024 Conference
 
 <p><img src="docs/assets/img/img2.jpg"></p>
 </div>
@@ -21,16 +21,31 @@ Come push the limits of state-of-the-art semantic segmentation approaches on a l
 
 </div>
 
-## Data & Context
+## Data and context
 <div align="justify">
 
  
 </div>
 
-## Baseline
+## Baseline model
 <div align="justify">
 
  
+</div>
+
+## Usage and configuration
+<div align="justify">
+	
+</div>
+
+## Reference
+<div align="justify">
+	
+</div>
+
+## Acknoledgement
+<div align="justify">
+	
 </div>
 
 <!--
