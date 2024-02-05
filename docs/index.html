@@ -154,7 +154,7 @@
                             <b>Feb 05, 2024:</b> Opening challenge 1st round (development phase).
                         </li>
                         <li>
-                            <b>Feb 29, 2024:</b> Opening paper submission.
+                            <b>Mar 01, 2024:</b> Opening paper submission.
                         </li>
                         <li>
                             <b>Mar 22, 2024:</b> Paper submission deadline.
@@ -192,7 +192,7 @@
                     The main task of the OpenEarthMap Few-Shot Challenge is a <strong>5-shot</strong> multi-class semantic segmentation, i.e., generalized few-shot
                     semantic segmentation (GFSS) task, with <strong>4 novel classes</strong> and <strong>7 base classes</strong>. 
                     Given a <i>support set</i> of images with their labels, participants are to predict segmentation maps of all images in a given <i>query set</i>
-                    (Note, the labels for the images in the <i>query set</i> are withheld and are used for evaluation). </br>
+                    (Note, the labels for the images in the <i>query set</i> are withheld and are used for evaluation).</br>
                     
                     The <i>support set</i> consists of 20 image-label pair examples, 5-set examples for each of the 4 novel classes. 
                     The labels for each image in the <i>support set</i> do not contain any of the base classes. Also, in each 5-set examples, the labels contain 
@@ -202,8 +202,7 @@
                     In this challenge, the GFSS task is in two phases: the <strong>development phase</strong>  and the <strong>evaluation phase</strong>.
                     In the development phase, the participants will be given training data for pre-training their backbone networks. The participants will use
                     the training data and a <i>support set</i> of 20 image-label pair examples to predict the segmentation maps of 30 images in a 
-                    given <i>query set</i>,
-                    which contains both base classes and novel classes. Here, the participants submit their results to get performance feedback.
+                    given <i>query set</i>, which contains both base classes and novel classes. Here, the participants submit their results to get performance feedback.
                     <strong>Note: participants need to submit their challenge paper to be eligible to enter the evaluation phase</strong>.</br>
 
                     In the evaluation phase, the participants will use the training data and a different <i>support set</i> of 20 image-label pair examples
@@ -211,7 +210,7 @@
                     Note that both the <i>support set</i> and the <i>query set</i> for the development phase are different from the ones for the evaluation phase. 
                     However, in terms of class definition, the base classes are the same, but the novel classes are different. Here, the participants submit their
                     results for final evaluation. The performance of the best submission from each submission account will be displayed on the leaderboard. 
-                    See the <a href="#rules">challenge rules</a>for the submission format.
+                    See the <a href="#rules">challenge rules</a> for the submission format.
                 </p>
                 <p class="text-justify">
                     For evaluation, we resort to the <strong>mean intersection-over-union (mIoU)</strong>, which is the average value over the IoUs of all the 
@@ -313,7 +312,7 @@
                     The 408 samples are also split into 258 as trainset, 50 as valset, and 100 as testset. The trainset is for pre-training a
                     backbone network. It contains only the images and labels of the <i>train_base_class</i> split. Both the valset and the testset
                     consist of a <i>support set</i> and a <i>query set</i>. The valset and the testset contain the images and labels
-                    of the <i>val_novel_class</i> and the <i>test_novel_class</i> splits, respectively.  A detailed description of the OpenEarthMap few-shot 
+                    of the <i>val_novel_class</i> and the <i>test_novel_class</i> splits, respectively.  A detailed description of the <!--OpenEarthMap few-shot--> 
                     challenge dataset can be found <a href="https://zenodo.org/uploads/10591939" target="_blank">here</a>, 
                     where the dataset can also be downloaded. The README in the <a href="https://github.com/cliffbb/OEM-Fewshot-Challenge" target="_blank">
                     baseline code</a> also explains how the challenge dataset can be used with the baseline model.
@@ -415,8 +414,9 @@
                             Manuscripts must be conformed to single-blind review policy.
                         </li>
                         <li>
-                            Manuscripts should follow the CVPR 2024 paper style. Download a modified version for the purpose of this challenge 
-                            <a href="https://drive.google.com/file/d/1tK3AN8eX9WnFkmmvyE-4nKmUn06tbWKX/view?usp=sharing" target="_blank">here</a>.
+                            Manuscripts should follow the CVPR 2024 paper style. Download a modified version from 
+                            <a href="https://drive.google.com/file/d/1tK3AN8eX9WnFkmmvyE-4nKmUn06tbWKX/view?usp=sharing" target="_blank">here</a>
+                            for the purpose of this challenge.
                         </li>
                         <li>
                             Authors must add their `Codalab account` which is used for the final phase of the challenge submissions. 
@@ -434,7 +434,7 @@
                     The key dates of the challenge paper submission are as follows:
                     <ul>
                         <li>
-                            Opening paper submission: 29th February 2024.
+                            Opening paper submission: 1st March 2024.
                         </li>
                         <li>
                             Paper submission deadline: 22nd March 2024, 11:59 pm Pacific Time.
