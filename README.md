@@ -1,29 +1,6 @@
 <div align="center">
-<p><img src="docs/assets/img/OpenEarthMap_Logo_v2.png"></p>
-<p>
-    <a href="https://github.com/cliffbb/OEM-Lightweight/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-<p>.svg?style=for-the-badge"></a>
-    <a href="https://pytorch.org/get-started/previous-versions/"><img src="https://img.shields.io/badge/PYTORCH-1.12+-red?style=for-the-badge&logo=pytorch"></a>
-    <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/PYTHON-3.7+-red?style=for-the-badge&logo=python&logoColor=white"></a>
-</p>
-<h2>
-   OpenEarthMap Land Cover Mapping Few-Shot Challenge </br>
-   <small>Co-organized with the <a href="https://sites.google.com/view/l3divu2024/overview">L3D-IVU CVPR 2024</a> Workshop</small>
-</h2>
-</div>
-
-<div align="justify">
-<p>
-This repository contains the baseline model code for the OpenEarthMap land cover mapping generalized few-shot semantic segmentation challenge, co-organized with the <b>Learning with Limited Labelled Data for Image and Video Understanding</b> Workshop at the <b>CVPR 2024</b> Conference.
-</p>
-</div>
-
-
-
-
-<div align="center">
-  
-# FLAIR #1 : Semantic segmentation and domain adaptation for land-cover from aerial imagery
-### Challenge proposed by the French National Institute of Geographical and Forest Information (IGN).
+#OpenEarthMap Land Cover Mapping Few-Shot Challenge: Generalized Few-shot Semantic Segmentation (GFSS).
+### Challenge proposed by the RIKEN-AIP Geoinformatics Team, Japan, and co-organized with the  L3D-IVU CVPR 2024 Workshop.
 
 
 ![Static Badge](https://img.shields.io/badge/Code%3A-lightgrey?color=lightgrey) [![license](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/IGNF/FLAIR-1-AI-Challenge/blob/master/LICENSE) <a href="https://pytorch.org/get-started/locally/"><img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-ee4c2c?logo=pytorch&logoColor=white"></a>
@@ -32,7 +9,8 @@ This repository contains the baseline model code for the OpenEarthMap land cover
 
 
 
-Participate in obtaining more accurate maps for a more comprehensive description and a better understanding of our environment! Come push the limits of state-of-the-art semantic segmentation approaches on a large and challenging dataset. Get in touch at ai-challenge@ign.fr
+Participate in obtaining more accurate maps for a more comprehensive description and a better understanding of our environment! 
+Come push the limits of state-of-the-art semantic segmentation approaches on a large and challenging dataset. Get in touch at ai-challenge@ign.fr
 
 
 
@@ -51,6 +29,27 @@ Participate in obtaining more accurate maps for a more comprehensive description
 
 - **Challenge page :**  https://codalab.lisn.upsaclay.fr/competitions/8769 [🛑 closed!]
 
+</div>
+
+
+<div align="center">
+<p><img src="docs/assets/img/OpenEarthMap_Logo_v2.png"></p>
+<p>
+    <a href="https://github.com/cliffbb/OEM-Lightweight/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-<p>.svg?style=for-the-badge"></a>
+    <a href="https://pytorch.org/get-started/previous-versions/"><img src="https://img.shields.io/badge/PYTORCH-1.12+-red?style=for-the-badge&logo=pytorch"></a>
+    <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/PYTHON-3.7+-red?style=for-the-badge&logo=python&logoColor=white"></a>
+</p>
+<h2>
+   </br>
+   <small>Co-organized with the <a href="https://sites.google.com/view/l3divu2024/overview">L3D-IVU CVPR 2024</a> Workshop</small>
+</h2>
+</div>
+
+<div align="justify">
+<p>
+This repository contains the baseline model code for the OpenEarthMap land cover mapping generalized few-shot semantic segmentation challenge, 
+co-organized with the <b>Learning with Limited Labelled Data for Image and Video Understanding</b> Workshop at the <b>CVPR 2024</b> Conference.
+</p>
 </div>
 
 
