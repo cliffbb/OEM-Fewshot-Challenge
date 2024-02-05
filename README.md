@@ -19,7 +19,7 @@ Come push the limits of state-of-the-art semantic segmentation approaches on a l
 
 </div>
 
-## Data & Context
+### Data & Context
 
 <!--
 <div style="border-width:1px; border-style:solid; border-color:#d2db8c; padding-left: 1em; padding-right: 1em; ">
