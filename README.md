@@ -33,15 +33,15 @@
 ## Context
 <div align="justify">
 <p>
-This repository contains the baseline model code for the OpenEarthMap land cover mapping generalized few-shot semantic segmentation challenge, 
-co-organized with the <b>Learning with Limited Labelled Data for Image and Video Understanding</b> Workshop at the <b>CVPR 2024</b> Conference.
+	This repository contains the baseline model code for the OpenEarthMap land cover mapping generalized few-shot semantic segmentation challenge, 
+	co-organized with the <b>Learning with Limited Labelled Data for Image and Video Understanding</b> Workshop at the <b>CVPR 2024</b> Conference.
 </p>
 </div>
 
 ## Dataset
 <div align="justify">
-
- 
+	
+This dataset extends the original 8 semantic classes of the [OpenEarthmap](https://open-earth-map.org/) benchmark dataset to 13 classes for **5-shot** generalized few-shot semantic segmentation task with **4 novel classes** and **7 base classes**. It consists of only 408 samples from the original OpenEarthMap dataset. A detailed description of the dataset can be found [here](https://zenodo.org/records/10591939), where it can also be downloaded. 
 </div>
 
 ## Baseline
@@ -85,24 +85,14 @@ For any scientific publication using this data, the following paper should be ci
 
 
 
-<!-- ============================================================================
-<div style="border-width:1px; border-style:solid; border-color:#d2db8c; padding-left: 1em; padding-right: 1em; ">
-  
-<h2 style="margin-top:5px;">Links</h2>
 
-
-- **Datapaper :** https://arxiv.org/pdf/2211.12979.pdf
-
-- **Dataset links :** https://ignf.github.io/FLAIR/ or https://huggingface.co/datasets/IGNF/FLAIR
-
-- **Challenge page :**  https://codalab.lisn.upsaclay.fr/competitions/8769 [🛑 closed!]
-
-</div>
-
-
--->
 
 <!-- 
+A U-Net architecture with a pre-trained ResNet34 encoder from the pytorch segmentation models library is used for the baselines. The used architecture allows integration of patch-wise metadata information and employs commonly used image data augmentation techniques. It has about 24.4M parameters and it is implemented using the segmentation-models-pytorch library. The results are evaluated with an Intersection Over Union (IoU) metric and a single mIoU is reported (see associated datapaper).
+
+The metadata strategy refers encoding metadata with a shallow MLP and concatenate this encoded information to the U-Net encoder output. The augmentation strategy employs three typical geometrical augmentations (see associated datapaper).
+
+Example of a semantic segmentation of an urban and coastal area in the D076 spatial domain, obtained with the baseline trained model:
 
 
 ## &#x1F3AC; 
