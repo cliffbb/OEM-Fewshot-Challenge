@@ -14,17 +14,28 @@
 </div>
 
 ##
-
 <div align="justify">
-Participate in obtaining more accurate maps for a more comprehensive description and a better understanding of our environment! 
-Come push the limits of state-of-the-art semantic segmentation approaches on a large and challenging dataset. Get in touch at ai-challenge@ign.fr
-
+<p>
+	We are excited to be seeing great ideas from across the globe working hard towards a better understanding of our environment. We look forward to having fun in our quest to obtain more 
+	accurate semantic segmentation maps for practical applications of few-shot learning in remote sensing image understanding.	
+	Let us come together to push the state-of-the-art generalized few-shot semantic segmentation (GFSS) learning methods to promote research in AI for social good.
+</p> 
+<p>
+	
+**Get involved! Check out the following links:** </br>
+- Challenge Webpage [https://cliffbb.github.io/OEM-Fewshot-Challenge/](https://cliffbb.github.io/OEM-Fewshot-Challenge/)
+- L3D-IVU Workshop @ CVPR 2024 Conference [https://sites.google.com/view/l3divu2024/overview](https://sites.google.com/view/l3divu2024/overview)
+- Dataset Download [https://zenodo.org/records/10591939](https://zenodo.org/records/10591939)
+- Submission Portal [https://codalab.lisn.upsaclay.fr/competitions/17568?secret_key=94bf7540-3a5f-4bcf-a750-03a06c6d9d23](https://codalab.lisn.upsaclay.fr/competitions/17568?secret_key=94bf7540-3a5f-4bcf-a750-03a06c6d9d23)
+</p>
 </div>
 
 ## Context
 <div align="justify">
-
- 
+<p>
+This repository contains the baseline model code for the OpenEarthMap land cover mapping generalized few-shot semantic segmentation challenge, 
+co-organized with the <b>Learning with Limited Labelled Data for Image and Video Understanding</b> Workshop at the <b>CVPR 2024</b> Conference.
+</p>
 </div>
 
 ## Dataset
@@ -41,20 +52,40 @@ Come push the limits of state-of-the-art semantic segmentation approaches on a l
 
 ## Usage
 <div align="justify">
+### Baseline Code adopted from ...
+Run from a terminal, use the `test.sh` script, which its general syntax is:
+```bash
+bash test.sh 
+```
 	
 </div>
 
-## Reference
+## Citation
+<div align="justify">
+For any scientific publication using this data, the following paper should be cited:
+<pre style="white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word;">
+@InProceedings{Xia_2023_WACV,
+    author    = {Xia, Junshi and Yokoya, Naoto and Adriano, Bruno and Broni-Bediako, Clifford},
+    title     = {OpenEarthMap: A Benchmark Dataset for Global High-Resolution Land Cover Mapping},
+    booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+    month     = {January},
+    year      = {2023},
+    pages     = {6254-6264}
+}
+</pre>
+</div>
+
+## Acknowledgement
 <div align="justify">
 	
 </div>
 
-## Acknoledgement
-<div align="justify">
-	
-</div>
 
-<!--
+
+
+
+
+<!-- ============================================================================
 <div style="border-width:1px; border-style:solid; border-color:#d2db8c; padding-left: 1em; padding-right: 1em; ">
   
 <h2 style="margin-top:5px;">Links</h2>
@@ -69,41 +100,12 @@ Come push the limits of state-of-the-art semantic segmentation approaches on a l
 </div>
 
 
-<div align="center">
-
-
-<h2>
-   </br>
-   <small>Co-organized with the <a href="https://sites.google.com/view/l3divu2024/overview">L3D-IVU CVPR 2024</a> Workshop</small>
-</h2>
-</div>
-
-<div align="justify">
-<p>
-This repository contains the baseline model code for the OpenEarthMap land cover mapping generalized few-shot semantic segmentation challenge, 
-co-organized with the <b>Learning with Limited Labelled Data for Image and Video Understanding</b> Workshop at the <b>CVPR 2024</b> Conference.
-</p>
-</div>
-
-### Baseline Code adopted from ...
-Run from a terminal, use the `test.sh` script, which its general syntax is:
-```bash
-bash test.sh 
-```
 -->
 
 <!-- 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cliffbb/OEM-Fewshot-Challenge/blob/master/test.ipynb)
-[pre-trained mode]('https://drive.google.com/file/d/1eLjfUJ2ajAMkJKCsoJr-MGSSzZ-LqDbR/view?usp=drive_link')
 
 
-# DIaM for Generalized Few-Shot Semantic Segmentation
-
-This repository contains the code for our **CVPR 2023** paper, [A Strong Baseline for Generalized Few-Shot Semantic Segmentation](https://arxiv.org/abs/2211.14126).
-
-> **Abstract:** *This paper introduces a generalized few-shot segmentation framework with a straightforward training process and an easy-to-optimize inference phase. In particular, we propose a simple yet effective model based on the well-known InfoMax principle, where the Mutual Information (MI) between the learned feature representations and their corresponding predictions is maximized. In addition, the terms derived from our MI-based formulation are coupled with a knowledge distillation term to retain the knowledge on base classes. With a simple training process, our inference model can be applied on top of any segmentation network trained on base classes. The proposed inference yields substantial improvements on the popular few-shot segmentation benchmarks PASCAL-5<sup>i</sup> and COCO-20<sup>i</sup>. Particularly, for novel classes, the improvement gains range from 7% to 26% (PASCAL-5<sup>i</sup>) and from 3% to 12% (COCO-20<sup>i</sup>) in the 1-shot and 5-shot scenarios, respectively. Furthermore, we propose a more challenging setting, where performance gaps are further exacerbated.*
-
-## &#x1F3AC; Getting Started
+## &#x1F3AC; 
 
 ### :one: Requirements
 We used `Python 3.9` in our experiments and the list of packages is available in the `requirements.txt` file. You can install them using `pip install -r requirements.txt`.
