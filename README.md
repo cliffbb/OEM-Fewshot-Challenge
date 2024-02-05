@@ -1,5 +1,5 @@
 <div align="center">
-<!-- <p><img src="docs/assets/img/OpenEarthMap_Logo_v2.png"></p> -->
+<p><img src="docs/assets/img/OpenEarthMap_Logo_v2.png"></p>
 <p>
     <a href="https://github.com/cliffbb/OEM-Lightweight/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-<p>.svg?style=for-the-badge"></a>
     <a href="https://pytorch.org/get-started/previous-versions/"><img src="https://img.shields.io/badge/PYTORCH-1.12+-red?style=for-the-badge&logo=pytorch"></a>
@@ -16,6 +16,45 @@
 This repository contains the baseline model code for the OpenEarthMap land cover mapping generalized few-shot semantic segmentation challenge, co-organized with the <b>Learning with Limited Labelled Data for Image and Video Understanding</b> Workshop at the <b>CVPR 2024</b> Conference.
 </p>
 </div>
+
+
+
+
+<div align="center">
+  
+# FLAIR #1 : Semantic segmentation and domain adaptation for land-cover from aerial imagery
+### Challenge proposed by the French National Institute of Geographical and Forest Information (IGN).
+
+
+![Static Badge](https://img.shields.io/badge/Code%3A-lightgrey?color=lightgrey) [![license](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/IGNF/FLAIR-1-AI-Challenge/blob/master/LICENSE) <a href="https://pytorch.org/get-started/locally/"><img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-ee4c2c?logo=pytorch&logoColor=white"></a>
+<a href="https://pytorchlightning.ai/"><img alt="Lightning" src="https://img.shields.io/badge/-Lightning-792ee5?logo=pytorchlightning&logoColor=white"></a> &emsp; ![Static Badge](https://img.shields.io/badge/Dataset%3A-lightgrey?color=lightgrey) [![license](https://img.shields.io/badge/License-IO%202.0-green.svg)](https://github.com/etalab/licence-ouverte/blob/master/open-licence.md)
+
+
+
+
+Participate in obtaining more accurate maps for a more comprehensive description and a better understanding of our environment! Come push the limits of state-of-the-art semantic segmentation approaches on a large and challenging dataset. Get in touch at ai-challenge@ign.fr
+
+
+
+![Alt bandeau FLAIR-IGN](images/flair_bandeau.jpg?raw=true)
+
+</div>
+
+<div style="border-width:1px; border-style:solid; border-color:#d2db8c; padding-left: 1em; padding-right: 1em; ">
+  
+<h2 style="margin-top:5px;">Links</h2>
+
+
+- **Datapaper :** https://arxiv.org/pdf/2211.12979.pdf
+
+- **Dataset links :** https://ignf.github.io/FLAIR/ or https://huggingface.co/datasets/IGNF/FLAIR
+
+- **Challenge page :**  https://codalab.lisn.upsaclay.fr/competitions/8769 [🛑 closed!]
+
+</div>
+
+
+
 
 
 ### Baseline Code adopted from ...
