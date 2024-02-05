@@ -1,10 +1,12 @@
 <div align="center">
 	
 ### OpenEarthMap Land Cover Mapping Few-Shot Challenge </br> Generalized Few-shot Semantic Segmentation
-</div>
+#### Challenge proposed by the [Geoinformatics Team of RIKEN-AIP](https://geoinformatics2018.com/) and co-organized with the [3rd L3D-IVU Workshop](https://sites.google.com/view/l3divu2024/overview) @ CVPR 2024 Conference
+
+<p><img src="docs/assets/img/img2.jpg"></p></div>
 <div align="center">
 	
-****Challenge proposed by the [Geoinformatics Team of RIKEN-AIP](https://geoinformatics2018.com/) and co-organized with the [3rd L3D-IVU Workshop](https://sites.google.com/view/l3divu2024/overview) @ CVPR 2024 Conference****
+
 </div>
 
 <!--
@@ -23,7 +25,7 @@
 
 
 <div align="center">
-<p><img src="docs/assets/img/OpenEarthMap_Logo_v2.png"></p>
+
 <p>
     <a href="https://github.com/cliffbb/OEM-Lightweight/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-<p>.svg?style=for-the-badge"></a>
     <a href="https://pytorch.org/get-started/previous-versions/"><img src="https://img.shields.io/badge/PYTORCH-1.12+-red?style=for-the-badge&logo=pytorch"></a>
