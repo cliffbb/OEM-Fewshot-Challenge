@@ -21,19 +21,25 @@ Come push the limits of state-of-the-art semantic segmentation approaches on a l
 
 </div>
 
-## Data and context
+## Context
 <div align="justify">
 
  
 </div>
 
-## Baseline model
+## Dataset
 <div align="justify">
 
  
 </div>
 
-## Usage and configuration
+## Baseline
+<div align="justify">
+
+ 
+</div>
+
+## Usage
 <div align="justify">
 	
 </div>
