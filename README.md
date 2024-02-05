@@ -10,8 +10,10 @@
 	
 [![GitHub license](https://badgen.net/github/license/Naereen/Strapdown.js)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
 <a href="https://pytorch.org/get-started/locally/"><img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-ee4c2c?logo=pytorch&logoColor=white"></a>
-![Python](https://img.shields.io/badge/python-3.7+-blue.svg)
+![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
 </div>
+
+##
 
 <div align="justify">
 Participate in obtaining more accurate maps for a more comprehensive description and a better understanding of our environment! 
@@ -19,7 +21,17 @@ Come push the limits of state-of-the-art semantic segmentation approaches on a l
 
 </div>
 
-### Data & Context
+## Data & Context
+<div align="justify">
+
+ 
+</div>
+
+## Baseline
+<div align="justify">
+
+ 
+</div>
 
 <!--
 <div style="border-width:1px; border-style:solid; border-color:#d2db8c; padding-left: 1em; padding-right: 1em; ">
