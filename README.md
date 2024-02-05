@@ -3,11 +3,22 @@
 ### OpenEarthMap Land Cover Mapping Few-Shot Challenge </br> Generalized Few-shot Semantic Segmentation
 #### Challenge proposed by the [Geoinformatics Team of RIKEN-AIP](https://geoinformatics2018.com/) and co-organized with the [3rd L3D-IVU Workshop](https://sites.google.com/view/l3divu2024/overview) @ CVPR 2024 Conference
 
-<p><img src="docs/assets/img/img2.jpg"></p></div>
+<p><img src="docs/assets/img/img2.jpg"></p>
+</div>
+
 <div align="center">
 	
+[![GitHub license](https://badgen.net/github/license/Naereen/Strapdown.js)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
+<a href="https://pytorch.org/get-started/locally/"><img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-ee4c2c?logo=pytorch&logoColor=white"></a>
+![Python](https://img.shields.io/badge/python-3.7+-blue.svg)
+</div>
+
+<div align="justify">
+Participate in obtaining more accurate maps for a more comprehensive description and a better understanding of our environment! 
+Come push the limits of state-of-the-art semantic segmentation approaches on a large and challenging dataset. Get in touch at ai-challenge@ign.fr
 
 </div>
+
 
 <!--
 <div style="border-width:1px; border-style:solid; border-color:#d2db8c; padding-left: 1em; padding-right: 1em; ">
@@ -26,11 +37,7 @@
 
 <div align="center">
 
-<p>
-    <a href="https://github.com/cliffbb/OEM-Lightweight/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-<p>.svg?style=for-the-badge"></a>
-    <a href="https://pytorch.org/get-started/previous-versions/"><img src="https://img.shields.io/badge/PYTORCH-1.12+-red?style=for-the-badge&logo=pytorch"></a>
-    <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/PYTHON-3.7+-red?style=for-the-badge&logo=python&logoColor=white"></a>
-</p>
+
 <h2>
    </br>
    <small>Co-organized with the <a href="https://sites.google.com/view/l3divu2024/overview">L3D-IVU CVPR 2024</a> Workshop</small>
