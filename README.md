@@ -12,7 +12,7 @@
 Participate in obtaining more accurate maps for a more comprehensive description and a better understanding of our environment! 
 Come push the limits of state-of-the-art semantic segmentation approaches on a large and challenging dataset. Get in touch at ai-challenge@ign.fr
 
-
+<!--
 
 ![Alt bandeau FLAIR-IGN](images/flair_bandeau.jpg?raw=true)
 
@@ -61,7 +61,7 @@ Run from a terminal, use the `test.sh` script, which its general syntax is:
 ```bash
 bash test.sh 
 ```
-
+-->
 <!-- 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cliffbb/OEM-Fewshot-Challenge/blob/master/test.ipynb)
 [pre-trained mode]('https://drive.google.com/file/d/1eLjfUJ2ajAMkJKCsoJr-MGSSzZ-LqDbR/view?usp=drive_link')
