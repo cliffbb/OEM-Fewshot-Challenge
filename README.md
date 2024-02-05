@@ -1,12 +1,12 @@
 <div align="center">
-# OpenEarthMap Land Cover Mapping Few-Shot Challenge: Generalized Few-shot Semantic Segmentation (GFSS).
-### Challenge proposed by the RIKEN-AIP Geoinformatics Team, Japan, and co-organized with the  L3D-IVU CVPR 2024 Workshop.
+	# OpenEarthMap Land Cover Mapping Few-Shot Challenge: Generalized Few-shot Semantic Segmentation (GFSS).
+	### Challenge proposed by the RIKEN-AIP Geoinformatics Team, Japan, and co-organized with the  L3D-IVU CVPR 2024 Workshop.
 
 
 ![Static Badge](https://img.shields.io/badge/Code%3A-lightgrey?color=lightgrey) [![license](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/IGNF/FLAIR-1-AI-Challenge/blob/master/LICENSE) <a href="https://pytorch.org/get-started/locally/"><img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-ee4c2c?logo=pytorch&logoColor=white"></a>
 <a href="https://pytorchlightning.ai/"><img alt="Lightning" src="https://img.shields.io/badge/-Lightning-792ee5?logo=pytorchlightning&logoColor=white"></a> &emsp; ![Static Badge](https://img.shields.io/badge/Dataset%3A-lightgrey?color=lightgrey) [![license](https://img.shields.io/badge/License-IO%202.0-green.svg)](https://github.com/etalab/licence-ouverte/blob/master/open-licence.md)
 
-
+</div>
 
 
 Participate in obtaining more accurate maps for a more comprehensive description and a better understanding of our environment! 
