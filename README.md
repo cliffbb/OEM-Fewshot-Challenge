@@ -1,6 +1,6 @@
 <div align="center">
 	
-## OpenEarthMap Land Cover Mapping Few-Shot Challenge: Generalized Few-shot Semantic Segmentation (GFSS) Task
+## OpenEarthMap Land Cover Mapping Few-Shot Challenge </br> Generalized Few-shot Semantic Segmentation
 
 </div>
 **Challenge proposed by the RIKEN-AIP Geoinformatics Team, Japan, and co-organized with the  L3D-IVU CVPR 2024 Workshop.**
