@@ -107,8 +107,8 @@
                 <!-- </p>
                 <p class="text-justify"> -->
                     The challenge is part of the <a href="https://sites.google.com/view/l3divu2024/overview" target="_blank">3rd Workshop on Learning with Limited 
-                    Labelled Data for Image and Video Understanding (L3D-IVU)</a> in conjunction with CVPR 2024. Scientific papers describing the best entries 
-                    will be included and presented at the L3D-IVU CVPR 2024 Workshop, and published in the CVPR 2024 Workshops Proceedings. 
+                    Labelled Data for Image and Video Understanding (L3D-IVU)</a> in conjunction with CVPR 2024 Conference. The scientific papers of the best submissions
+                    will be presented in oral at the 3rd L3D-IVU Workshop @ CVPR 2024 Conference, and will also be published in the CVPR 2024 Workshops Proceedings. 
                 </p> 
                 <hr>
             </div>
@@ -123,18 +123,18 @@
                     <b>Phase 1 (Development Phase):</b> Participants are provided with the OpenEarthMap Few-Shot dataset for training and validation to train and 
                     validate their algorithms (<i>See the <a href="#dataset">dataset section</a> for details of the training and validation sets</i>).
                     Participants can submit results on the validation set to the <a href="#" target="_blank">Codalab competition submission portal</a> 
-                    to get feedback on the performance. The performance of the best submission from each account will be displayed on the leaderboard. </br>
-                    <!-- In parallel, participants submit a <a href="#paper">challenge paper</a> of their proposed method
-                    to be eligible to enter Phase 2. The manuscripts of the top winners will be included in the CVPR 2024 Workshops Proceedings. -->
+                    to get feedback on the performance. The performance of the best submission from each account will be displayed on the leaderboard. 
+                    In parallel, participants have to submit a <a href="#paper">challenge paper</a> of their proposed method to be eligible to enter Phase 2.</br>
                     
                     <b>Phase 2 (Evaluation Phase):</b> This is the final phase. Participants receive the testset of the OpenEarthMap Few-Shot dataset 
                     (<i>See the <a href="#dataset">dataset section</a> for details of the testset</i>). Participants submit their results on 
                     the testset to the <a href="#" target="_blank">Codalab competition submission portal</a> within <b>six days</b> from the release of the testing set.
                     After evaluation of the results, the top winners are announced.</br>
 
-                    In parallel, participants submit a <a href="#paper">challenge paper</a> of their proposed method. Note that the top winners of this
-                    challenge are determined not only on the performance on the leaderboard, but in addition to the novelty of their proposed method.
-                    The manuscripts of the top winners will be included in the CVPR 2024 Workshops Proceedings.
+                    <!-- In parallel, participants submit a <a href="#paper">challenge paper</a> of their proposed method.  -->
+                    <strong>Note that the top winners of this challenge are determined not only on the performance on the leaderboard, but in addition to the novelty 
+                    of their proposed method as described in the manuscripts they submit in the Phase 1. 
+                    The manuscripts of the top winners will be included in the CVPR 2024 Workshops Proceedings.</strong>
                 </p>
                 <hr>
             </div>
@@ -146,7 +146,7 @@
                     Important Dates
                 </h3>
                 <p class="text-justify" style="color: brown;">
-                    All the deadlines are strict, no extension will be given (<strong>11:59pm Pacific Time</strong>).
+                    All the deadlines are strict, no extension will be given (<strong>11:59 pm Pacific Time</strong>).
                 </p>
                 <p class="text-justify">
                     <ul>
@@ -154,16 +154,16 @@
                             <b>Feb 05, 2024:</b> Opening challenge 1st round (development phase).
                         </li>
                         <li>
-                            <b>Mar 01, 2024:</b> Opening paper submission.
+                            <b>Feb 29, 2024:</b> Opening paper submission.
                         </li>
-                        <!-- <li>
+                        <li>
                             <b>Mar 22, 2024:</b> Paper submission deadline.
-                        </li> -->
+                        </li>
                         <li>
                             <b>Mar 23, 2024:</b> Opening challenge 2nd round (evaluation phase).
                         </li>
                         <li>
-                            <b>Mar 29, 2024:</b> Challenge and paper submission deadline.
+                            <b>Mar 29, 2024:</b> Challenge submission deadline.
                         </li>
                         <li>
                             <b>Apr 07, 2024:</b> Paper notification to authors.
@@ -189,27 +189,29 @@
                     Task & Metrics
                 </h3>
                 <p class="text-justify">
-                    The main task of the OpenEarthMap Few-Shot Challenge is a `5-shot 4-way` multi-class semantic segmentation, i.e., generalized few-shot
-                    semantic segmentation (GFSS) task. To be more specific, given a <i>support set</i> of images with their labels, participants are to predict
-                    segmentation maps of all images in a given <i>query set</i> (Note, the labels for the images in the <i>query set</i> are 
-                    withheld and to be used for evaluation). For a `5-shot 4-way` few-shot learning task, the <i>support set</i> consists of 20 image-label
-                    pair examples, 5-pair examples for each of the 4 novel classes. The labels for each image in the <i>support set</i> do not contain
-                    any of the base classes. Also, the labels of particular 5-pair examples for a particular novel class contain only that novel class 
-                    (i.e., one novel class per 5-pair examples). However, the labels for the images in the <i>query set</i> contain both the base classes
-                    and the novel classes.</br>
+                    The main task of the OpenEarthMap Few-Shot Challenge is a <strong>5-shot</strong> multi-class semantic segmentation, i.e., generalized few-shot
+                    semantic segmentation (GFSS) task, with <strong>4 novel classes</strong> and <strong>7 base classes</strong>. 
+                    Given a <i>support set</i> of images with their labels, participants are to predict segmentation maps of all images in a given <i>query set</i>
+                    (Note, the labels for the images in the <i>query set</i> are withheld and are used for evaluation). </br>
+                    
+                    The <i>support set</i> consists of 20 image-label pair examples, 5-set examples for each of the 4 novel classes. 
+                    The labels for each image in the <i>support set</i> do not contain any of the base classes. Also, in each 5-set examples, the labels contain 
+                    only one novel class (i.e., one novel class per 5-set examples). However, the labels for the images in the <i>query set</i> contain 
+                    both the base classes and the novel classes.</br>
 
                     In this challenge, the GFSS task is in two phases: the <strong>development phase</strong>  and the <strong>evaluation phase</strong>.
-                    The participants will be given training data for pre-training their backbone networks. In the development phase, the participants will use
-                    the training data and a <i>support set</i> of 20 image-label pair examples to predict the segmentation maps of a 30-image <i>query set</i>,
-                    which contains both base classes and novel classes. Here, the participants can submit their results to the to get performance feedback.
-                    Note: participants need to submit a challenge paper to be eligible to enter the final evaluation phase.</br>
+                    In the development phase, the participants will be given training data for pre-training their backbone networks. The participants will use
+                    the training data and a <i>support set</i> of 20 image-label pair examples to predict the segmentation maps of 30 images in a 
+                    given <i>query set</i>,
+                    which contains both base classes and novel classes. Here, the participants submit their results to get performance feedback.
+                    <strong>Note: participants need to submit their challenge paper to be eligible to enter the evaluation phase</strong>.</br>
 
-                    In the final evaluation phase, the participants will use the training data and a different <i>support set</i> of 20 image-label pair examples
-                    to predict the segmentation maps of a 80-image <i>query set</i>, which also contains both base classes and novel classes. Note that both the 
-                    <i>support set</i> and <i>query set</i> for the development phase are different from the <i>support set</i> and <i>query set</i> for 
-                    the final evaluation phase. Here, the participants can submit their results for final evaluation. The performance of the best submission 
-                    from each submission account will be displayed on the leaderboard. See the <a href="#rules">challenge rules</a> for the results format to be submitted to
-                    the <a href="#" target="_blank">Codalab competition submission portal</a>.
+                    In the evaluation phase, the participants will use the training data and a different <i>support set</i> of 20 image-label pair examples
+                    to predict the segmentation maps of 80 images in a given <i>query set</i>, which also contains both base classes and novel classes.                 
+                    Note that both the <i>support set</i> and the <i>query set</i> for the development phase are different from the ones for the evaluation phase. 
+                    However, in terms of class definition, the base classes are the same, but the novel classes are different. Here, the participants submit their
+                    results for final evaluation. The performance of the best submission from each submission account will be displayed on the leaderboard. 
+                    See the <a href="#rules">challenge rules</a>for the submission format.
                 </p>
                 <p class="text-justify">
                     For evaluation, we resort to the <strong>mean intersection-over-union (mIoU)</strong>, which is the average value over the IoUs of all the 
@@ -232,8 +234,7 @@
                     score for the performance evaluation and ranking, we resort to a <i>weighted-sum</i> of <b>base mIoU</b> and <b>novel mIoU</b>, which is 
                     computed using 0.4:0.6 weights for the base classes and the novel classes, respectively (0.4*<b>base mIoU</b> + 0.6*<b>novel mIoU</b>). 
                     The weights are derived from the state-of-the-art results presented in the
-                    <a href="https://arxiv.org/pdf/2211.14126.pdf" target="_blank">GFSS baseline</a> adopted in this challenge.</br>
-                    
+                    <a href="https://arxiv.org/pdf/2211.14126.pdf" target="_blank">GFSS baseline</a> adopted in this challenge.                    
                     Note that the top winners are determined not only on the performance on the leaderboard, but in addition to the novelty of 
                     their proposed method described in their submitted manuscripts.
                 </p>               
@@ -248,9 +249,10 @@
                 </h3>
                 <p class="text-justify">
                     The participants are supposed to submit a single compressed `.zip` file which contains the predicted segmentation maps of all images
-                    in a given <i>query set</i>. The predicted segmentation maps are supposed to be in `xxxx.png` format. The `xxxx` is the name 
+                    in a given <i>query set</i> at the <a href="#" target="_blank">Codalab competition submission portal</a>.
+                    The predicted segmentation maps are supposed to be in `xxxx.png` format. The `xxxx` is the name 
                     of the image in the <i>query set</i>. For example, given a query image `accra_2.tif`, the predicted segmentation map should be
-                    named as `accra_2.png`. No other format of submission will be accepted.
+                    named as `accra_2.png`. Any other format of submission will not be accepted.
                     <!-- The compressed `.zip` file which contains all predicted segmentation maps must bear the name of the team.  -->
                 </p>
                 <p class="text-justify" style="margin-bottom:0px;">
@@ -269,7 +271,10 @@
                             A team can have not more than five members. A member can only be part of one team.
                         </li>
                         <li>
-                            Each team can make only 10 submissions in the evaluation phase. No submissions limit in the development phase.
+                            Each team can make only 10 submissions per day in the development phase. 
+                        </li>
+                        <li>
+                            Each team can make a total of 10 submissions in the evaluation phase. 
                         </li>
                         <li>
                             The best submission of a team in the evaluation phase is used to rank the team, and it is selected for the final evaluation.
@@ -278,13 +283,13 @@
                             The top winners are determined by both the performance on the leaderboard and the novelty of their proposed method.
                         </li>
                         <li>
-                            Top winners will be asked to submit their codes for cross-checking their results.
+                            The top winners will be asked to submit their codes for cross-checking their results.
                         </li>                       
                         <li>
-                            The best top-winner submission must exceed the baseline score of the challenge to be eligible for the challenge prize.
+                            The top winners' submissions must exceed the baseline score of the challenge to be eligible for the challenge prize.
                         </li>
                         <li>
-                            The organizers and advisors associated with the challenge are not allowed to participate.
+                            The organizers of the challenge are not allowed to participate.
                         </li>
                     </ul>
                 </p>
@@ -304,11 +309,10 @@
                     split into 7:4:4 for <i>train_base_class</i>, <i>val_novel_class</i>, and <i>test_novel_class</i> disjointed sets, respectively
                     (i.e., <i>train_base_class</i> &cap; <i>val_novel_class</i> &cap; <i>test_novel_class</i> &equals; &empty;). 
                     See the <a href="#task">challenge task</a> for the purpose of each class split and the number of classes in each class split.</br>
-                <!-- </p> -->
-                <!-- <p class="text-justify">    -->
+
                     The 408 samples are also split into 258 as trainset, 50 as valset, and 100 as testset. The trainset is for pre-training a
                     backbone network. It contains only the images and labels of the <i>train_base_class</i> split. Both the valset and the testset
-                    consist of a <i>support set</i> and a <i>query set</i> for a `5-shot 4-way` GFSS task. The valset and the testset contain the images and labels
+                    consist of a <i>support set</i> and a <i>query set</i>. The valset and the testset contain the images and labels
                     of the <i>val_novel_class</i> and the <i>test_novel_class</i> splits, respectively.  A detailed description of the OpenEarthMap few-shot 
                     challenge dataset can be found <a href="https://zenodo.org/uploads/10591939" target="_blank">here</a>, 
                     where the dataset can also be downloaded. The README in the <a href="https://github.com/cliffbb/OEM-Fewshot-Challenge" target="_blank">
@@ -343,30 +347,37 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <h3>
-                    Results, Awards, &amp; Prizes
+                    <!-- Results, Awards, &amp; Prizes -->
+                    Awards &amp; Prizes
                 </h3>
                 <p class="text-justify">
-                    Five teams will be declared as winners: the 1st, 2nd, 3rd, 4th, and 5th ranked teams.</br>
-                <!-- </p>
+                    Three (3) teams will be declared as winners: the 1st, 2nd, and 3rd ranked teams.</br>
+                <!-- </p> 4th, and 5th
                 <p class="text-justify"> -->
-                    The authors of the 1st &amp; 2nd teams will present their manuscripts in oral, and the 3rd, 4th &amp; 5th teams
-                    as poster at the L3D-IVU CVPR 2024 Workshop session.</br>
+                    <!-- The authors of the 1st &amp; 2nd teams will present their manuscripts in oral, and the 3rd, 4th &amp; 5th teams
+                    as poster at the L3D-IVU CVPR 2024 Workshop session.</br> -->
+                    The wining teams will have the opportunity to present their papers in oral at the 3rd L3D-IVU Workshop @ CVPR 2024 Conference.</br>
 
-                    The manuscripts of the 1st &amp; 2nd teams will be included in the CVPR 2024 Workshops Proceedings. 
+                    <!-- The manuscripts of the 1st &amp; 2nd teams will be included in the CVPR 2024 Workshops Proceedings. 
                     Note that for a manuscript to be included in the proceedings, it should be <strong>full-length (5&ndash;8 pages, excluding 
+                    references) paper and not published at CVPR 2024</strong>.</br> -->
+                    The papers of the winning teams will be published in the CVPR2 024 Workshops Proceedings. 
+                    Note that for a paper to be included in the proceedings, it should be <strong>full-length (5&ndash;8 pages, excluding 
                     references) paper and not published at CVPR 2024</strong>.</br>
 
-                    The manuscripts of the 3rd, 4th, &amp; 5th teams will be linked at the L3D-IVU CVPR 2024 Workshop webpage, 
-                    but will not be included in the CVPR 2024 Workshops Proceedings.</br>
+                    <!-- The manuscripts of the 3rd, 4th, &amp; 5th teams will be linked at the L3D-IVU CVPR 2024 Workshop webpage, 
+                    but will not be included in the CVPR 2024 Workshops Proceedings.</br> -->
 
-                    The authors of the 1st & 2nd teams will be awarded certificates, and the 1st team will also receive a prize of <b>1000 USD</b> 
-                    on the day of the L3D-IVU CVPR 2024 Workshop in Seattle WA, USA.</br> 
-                    <!-- The details will be made available on the workshop website (<strong>TBA</strong>).  -->
+                    <!-- The authors of the 1st & 2nd teams will be awarded certificates, and the 1st team will also receive a prize of <b>1000 USD</b> 
+                    on the day of the L3D-IVU CVPR 2024 Workshop in Seattle WA, USA.</br>  -->
+                    The authors of the winning teams will be awarded certificates on the day of the 3rd L3D-IVU Workshop @ CVPR 2024 Conference.</br>
+                    
+                    Each wining team will also receive a prize. The details will be made available on the workshop website (<strong>TBA</strong>). 
                     <!-- The prizes is kindly sponsored by the... -->
 
-                    The authors of the 3rd, 4th, &amp; 5th teams will be invited to co-author a journal paper (limited to 2 co-authors per a team), which will summarize
+                    <!-- The authors of the 3rd, 4th, &amp; 5th teams will be invited to co-author a journal paper (limited to 2 co-authors per a team), which will summarize
                     the outcome of the Challenge and will be submitted to <a href="https://www.sciencedirect.com/journal/neurocomputing" target="_blank">Neurocomputing</a>. 
-                    To maximize impact and promote research in AI for social good, the open-access option will be used for this journal submission.
+                    To maximize impact and promote research in AI for social good, the open-access option will be used for this journal submission. -->
                 </p>
                 <hr>
             </div>
@@ -378,15 +389,20 @@
                     Challenge Paper Submission
                 </h3>
                 <p class="text-justify">
-                    As part of the <strong>challenge evaluation</strong>, the challenge participants are required to submit a 5&ndash;8 pages (excluding references)
-                    paper in parallel with the challenge submissions. The challenge winners are determined both by the performance on the leaderboard and 
-                    the novelty of the proposed method as detailed in the submmited manuscripts. Each manuscript describes the challenge addressed problem
-                    (<i>i.e., generalized few-shot semantic segmentation task in RS image understanding</i>), the proposed method, and the experimental results.</br>
+                    As part of the <strong>challenge evaluation</strong>, the participants are required to submit a 5&ndash;8 pages (excluding references)
+                    paper in parallel with the challenge submissions during the 1st round. The challenge winners are determined both by the performance 
+                    on the leaderboard and the novelty of the proposed method as detailed in the submitted manuscripts. Each manuscript describes the 
+                    challenge addressed problem (<i>i.e., generalized few-shot semantic segmentation task in RS image understanding</i>), 
+                    the proposed method, and the experimental results.</br>
 
-                    Papers will be peer-reviewed under single-blind policy and the accepted ones of the top 2 winners, that are <strong>full-length 
+                    The papers will be peer-reviewed under single-blind policy. The accepted papers of the top winners will be published in the CVPR
+                    2024 Workshops Proceedings. Note that the paper has to be <strong>full-length (5&ndash;8 pages, excluding references) and not 
+                    published at CVPR 2024</strong>. The accepted papers will also be presented in oral at the 3rd L3D-IVU Workshop @ CVPR 2024 Conference.
+                 
+                    <!-- Papers will be peer-reviewed under single-blind policy and the accepted ones of the top 2 winners, that are <strong>full-length 
                     (5&ndash;8 pages, excluding references) and not published at CVPR 2024</strong>, will be published in the CVPR 2024 Workshops Proceedings.
                     The accepted papers of the 3rd, 4th, &amp; 5th winners will be linked at the L3D-IVU CVPR 2024 Workshop webpage, but will not be included in 
-                    the CVPR 2024 Workshops Proceedings. Accepted papers of the top-2 winners will be presented in oral, and the others as poster at the workshop session.
+                    the CVPR 2024 Workshops Proceedings. Accepted papers of the top-2 winners will be presented in oral, and the others as poster at the workshop session. -->
                 </p>
                 <p class="text-justify" style="margin-bottom:0px;">
                     Submission guidelines: 
@@ -417,10 +433,10 @@
                     The key dates of the challenge paper submission are as follows:
                     <ul>
                         <li>
-                            Open paper submission: 1st March 2024.
+                            Opening paper submission: 29th February 2024.
                         </li>
                         <li>
-                            Paper submission deadline: 29th March 2024, 11:59 pm Pacific Time.
+                            Paper submission deadline: 22nd March 2024, 11:59 pm Pacific Time.
                         </li>
                         <li>
                             Notification to authors: 7th April 2024.
@@ -434,9 +450,10 @@
                     Manuscripts must be submitted online via the CMT submission system (<strong>TBA</strong>).
                     <!-- Manuscripts should be submitted at <a href="https://cmt3.research.microsoft.com/L3DIVUCVPR2024/" target="_blank">https://cmt3.research.microsoft.com/L3DIVUCVPR2024/</a>. -->
                 </p>
+                <hr>
             </div>
         </div>
-
+        
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <h3>
@@ -474,9 +491,35 @@
                     <strong>TBA</strong>
                 </p>
                 <h3 class="text-justify"> &nbsp; </h3>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    Citation
+                </h3>
+                <p class="text-justify">For any scientific publication using this data, the following paper should be cited:</p>
+               
+                <!-- <div class="col-md-10 col-md-offset-1 text-justify"> -->
+                    <!-- <textarea id="bibtex" class="form-control" readonly> -->
+<pre>
+@InProceedings{Xia_2023_WACV,
+    author    = {Xia, Junshi and Yokoya, Naoto and Adriano, Bruno and Broni-Bediako, Clifford},
+    title     = {OpenEarthMap: A Benchmark Dataset for Global High-Resolution Land Cover Mapping},
+    booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+    month     = {January},
+    year      = {2023},
+    pages     = {6254-6264}
+}
+</pre>
+                    <!-- </textarea> -->
+                <!-- </div> -->
                 <hr><hr>
             </div>
         </div>
+
     </div>
 </body>
 </html>
