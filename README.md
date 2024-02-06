@@ -35,17 +35,28 @@
 <p>
 	This repository contains the baseline model code for the OpenEarthMap land cover mapping generalized few-shot semantic segmentation challenge, 
 	co-organized with the <b>Learning with Limited Labelled Data for Image and Video Understanding</b> Workshop at the <b>CVPR 2024</b> Conference.
+	Two phase
 </p>
 </div>
 
 ## Dataset
 <div align="justify">
 	
-This dataset extends the original 8 semantic classes of the [OpenEarthmap](https://open-earth-map.org/) benchmark dataset to 13 classes for **5-shot** generalized few-shot semantic segmentation task with **4 novel classes** and **7 base classes**. It consists of only 408 samples from the original OpenEarthMap dataset. A detailed description of the dataset can be found [here](https://zenodo.org/records/10591939), where it can also be downloaded. 
+This dataset extends the original 8 semantic classes of the [OpenEarthmap](https://open-earth-map.org/) benchmark dataset to 13 classes for **5-shot** generalized few-shot semantic segmentation (GFSS) task with **4 novel classes** and **7 base classes**. It consists of only 408 samples from the original OpenEarthMap dataset. The 408 samples are also split into 258 as *trainset*, 50 as *valset*, and 100 as *testset*. A detailed description of the dataset can be found [here](https://zenodo.org/records/10591939), where it can also be downloaded. 
 </div>
 
 ## Baseline
 <div align="justify">
+
+The PSPNet architecture with EfficientNet-B4 encoder from the [Segmentation Models Pytorch](https://github.com/qubvel/segmentation_models.pytorch?tab=readme-ov-file) GitHub repository is adopted as a baseline model.
+The model was pretrained on the 258 *trainset* using the [Catalyst](https://catalyst-team.com/) library. Then, the state-of-the-art framework called [distilled information maximization](https://arxiv.org/abs/2211.14126) 
+(DIaM) was used to perform the GFSS task. The code in this repository contains only the GFSS portion. As mentioned by the authors, any pretrained model can be used with their framework. We adopted the code from the [Github repository](https://github.com/sinahmr/DIaM?tab=readme-ov-file) of the baseline paper.</br></br>
+
+To run the code on the *valset*, simply clone this repository and change your directory to the `OEM-Fewshot-Challenge` folder which contains the code files. Then from a terminal, use the `test.sh` script. The general syntax is:
+```bash
+bash test.sh 
+```
+The results of the baseline model on the *valset* is presented below.
 
  
 </div>
@@ -77,7 +88,9 @@ For any scientific publication using this data, the following paper should be ci
 
 ## Acknowledgement
 <div align="justify">
-	
+	https://github.com/qubvel/segmentation_models.pytorch?tab=readme-ov-file
+	segmentation_models.pytorch
+
 </div>
 
 
@@ -88,6 +101,17 @@ For any scientific publication using this data, the following paper should be ci
 
 
 <!-- 
+If you want to use the pre-trained models, this step is optional. Our contribution lies in the inference phase and our approach is modular, i.e., it can be applied on top of any segmentation model that is trained on the base classes. We use a simple training scheme by minimizing a standard cross-entropy over base classes. To this end, we have used the train_base.py script and base learner models of BAM (see this issue for more info).
+
+
+
+A U-Net architecture with a pre-trained ResNet34 encoder from the pytorch segmentation models library is used for the baselines. The used architecture allows integration of patch-wise metadata information and employs commonly used image data augmentation techniques. It has about 24.4M parameters and it is implemented using the segmentation-models-pytorch library. The results are evaluated with an Intersection Over Union (IoU) metric and a single mIoU is reported (see associated datapaper).
+
+The metadata strategy refers encoding metadata with a shallow MLP and concatenate this encoded information to the U-Net encoder output. The augmentation strategy employs three typical geometrical augmentations (see associated datapaper).
+
+Example of a semantic segmentation of an urban and coastal area in the D076 spatial domain, obtained with the baseline trained model:
+	
+ A GFSS framework, called distilled information maximization (DIaM), with a PSPNet architecture of EfficientNet-B4 encoder from the PyTorch segmentation models library is presented as a baseline model. The baseline code can be used as a starter code for the challenge submission. To run it, follow the README instructions presented here. After running the code, an output folder ``results`` which contains ``preds`` and ``targets`` folders of the model's segmentation prediction maps and the corresponding targets, respectively, are created. Based on the rules mentioned above, only the ``preds`` folder which contains the predicted segmentation maps in `.png` file format is required for the submission. Please feel free to contact the challenge organizers for any question regarding the baseline code.
 A U-Net architecture with a pre-trained ResNet34 encoder from the pytorch segmentation models library is used for the baselines. The used architecture allows integration of patch-wise metadata information and employs commonly used image data augmentation techniques. It has about 24.4M parameters and it is implemented using the segmentation-models-pytorch library. The results are evaluated with an Intersection Over Union (IoU) metric and a single mIoU is reported (see associated datapaper).
 
 The metadata strategy refers encoding metadata with a shallow MLP and concatenate this encoded information to the U-Net encoder output. The augmentation strategy employs three typical geometrical augmentations (see associated datapaper).
