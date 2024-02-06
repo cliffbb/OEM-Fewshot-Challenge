@@ -69,7 +69,7 @@ Follow the instructions in the **Usage** section, then run the `test.sh` script 
 	<td>Weighted-Sum base-novel mIoU</td>
     </tr>
     <tr align="center">
-        <td>Valset</td>
+        <td>valset</td>
         <td> 29.48 </td> 
 	<td> 03.18 </td> 
 	<td> 16.33 </td> 
@@ -78,7 +78,7 @@ Follow the instructions in the **Usage** section, then run the `test.sh` script 
 	<td> 13.70 </td> 
     </tr>
    <tr align="center">
-	<td>Testset</td>
+	<td>testset</td>
         <td> --- </td> 
 	<td> --- </td> 
 	<td> --- </td> 
@@ -102,7 +102,7 @@ To use the baseline code, you first need to clone the repository and change your
 2. Download the dataset from [here](https://zenodo.org/records/10591939) into a directory that you set in the config file `oem.yaml`
 3. Download the pretrained weights from [here](https://drive.google.com/file/d/1eLjfUJ2ajAMkJKCsoJr-MGSSzZ-LqDbR/view?usp=sharing) into a directory that you set in the config file `oem.yaml`
 4. In the `oem.yaml` you need to set only the paths for the dataset and the pretrained weights. The other settings need not be changed to reproduce the results.
-5. Test the model by running the `test.sh` script as mentioned in the **Baseline** section. The script will use the *support_set** to adapt and predict the segmentation maps of the *query_set*. After running the script, the results are provided in a `results` folder which contains a `.txt` file of the IoUs and mIoUs, and a `preds` and `targets` folder for the predicted and the targets maps, respectively.
+5. Test the model by running the `test.sh` script as mentioned in the **Baseline** section. The script will use the *support_set* to adapt and predict the segmentation maps of the *query_set*. After running the script, the results are provided in a `results` folder which contains a `.txt` file of the IoUs and mIoUs, and a `preds` and `targets` folder for the predicted and the targets maps, respectively.
 
 You can pretrained your model using the *trainset* and any simple training scheme of your choice. The baseline paper used the [`train_base.py`](https://github.com/chunbolang/BAM/blob/main/train_base.py) script and base learner models of [BAM](https://github.com/chunbolang/BAM) (see the [baseline paper](https://github.com/sinahmr/DIaM?tab=readme-ov-file) for more info).
  
