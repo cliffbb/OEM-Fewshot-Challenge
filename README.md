@@ -48,9 +48,10 @@ This dataset extends the original 8 semantic classes of the [OpenEarthmap](https
 ## Baseline
 <div align="justify">
 
-The PSPNet architecture with EfficientNet-B4 encoder from the [Segmentation Models Pytorch](https://github.com/qubvel/segmentation_models.pytorch?tab=readme-ov-file) GitHub repository is adopted as a baseline model.
-The model was pretrained on the 258 *trainset* using the [Catalyst](https://catalyst-team.com/) library. Then, the state-of-the-art framework called [distilled information maximization](https://arxiv.org/abs/2211.14126) 
-(DIaM) was used to perform the GFSS task. The code in this repository contains only the GFSS portion. As mentioned by the authors, any pretrained model can be used with their framework. We adopted the code from the [Github repository](https://github.com/sinahmr/DIaM?tab=readme-ov-file) of the baseline paper.</br></br>
+The PSPNet architecture with EfficientNet-B4 encoder from the [Segmentation Models Pytorch](https://github.com/qubvel/segmentation_models.pytorch?tab=readme-ov-file) GitHub repository is adopted as a baseline network.
+The network was pretrained using the *trainset* with the [Catalyst](https://catalyst-team.com/) library. Then, the state-of-the-art framework called [distilled information maximization](https://arxiv.org/abs/2211.14126) 
+(DIaM) was adopted to perform the GFSS task. The code in this repository contains only the GFSS portion. As mentioned by the baseline authors, any pretrained model can be used with their framework. 
+We adopted the code from the [Github repository](https://github.com/sinahmr/DIaM?tab=readme-ov-file) of the baseline paper.</br></br>
 
 To run the code on the *valset*, simply clone this repository and change your directory to the `OEM-Fewshot-Challenge` folder which contains the code files. Then from a terminal, use the `test.sh` script. The general syntax is:
 ```bash
