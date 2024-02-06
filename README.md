@@ -51,24 +51,52 @@ This dataset extends the original 8 semantic classes of the [OpenEarthmap](https
 The PSPNet architecture with EfficientNet-B4 encoder from the [Segmentation Models Pytorch](https://github.com/qubvel/segmentation_models.pytorch?tab=readme-ov-file) GitHub repository is adopted as a baseline network.
 The network was pretrained using the *trainset* with the [Catalyst](https://catalyst-team.com/) library. Then, the state-of-the-art framework called [distilled information maximization](https://arxiv.org/abs/2211.14126) 
 (DIaM) was adopted to perform the GFSS task. The code in this repository contains only the GFSS portion. As mentioned by the baseline authors, any pretrained model can be used with their framework. 
-We adopted the code from the [Github repository](https://github.com/sinahmr/DIaM?tab=readme-ov-file) of the baseline paper.</br></br>
-
-To run the code on the *valset*, simply clone this repository and change your directory to the `OEM-Fewshot-Challenge` folder which contains the code files. Then from a terminal, use the `test.sh` script. The general syntax is:
+The code was adopted from [here](https://github.com/sinahmr/DIaM?tab=readme-ov-file). To run the code on the *valset*, simply clone this repository and change your directory to the `OEM-Fewshot-Challenge` folder which contains the code files. Then from a terminal, use the `test.sh` script. The general syntax is:
 ```bash
 bash test.sh 
 ```
-The results of the baseline model on the *valset* is presented below.
+The results of the baseline model on the *valset* are presented below.
 
- 
+ To reproduce the results, please first download the pre-trained models from [here](https://drive.google.com/file/d/1WuKaJbj3Y3QMq4yw_Tyec-KyTchjSVUG/view?usp=share_link) (also mentioned in the "download pre-trained models" section) and then run the `test.sh` script with different inputs, as explained above.
+<table>
+    <tr>
+        <!--<th colspan="2"></th>
+        <th colspan="3">1-Shot</th>
+        <th colspan="3">5-Shot</th>
+        <th>Benchmark</th>-->
+        <th>Fold</th>
+        <th>Base</th> 
+	<th>Novel</th> 
+	<th>Mean</th>
+        <th>Base</th> 
+	<th>Novel</th>
+	<th>Mean</th>
+    </tr>
+    <tr>
+        <td rowspan="5"><b>PASCAL-5<sup>i</sup></b></td>
+        <td>71.33</td> 
+	<td>29.36</td> 
+	<td>50.35</td>
+        <td>71.06</td>
+	<td>53.72</td> 
+	<td>62.39</td>
+    </tr>
+   <tr>
+	<td>69.10</td> 
+	<td>27.07</td> 
+	<td>48.09</td>
+	<td>69.12</td> 
+	<td>54.01</td> 
+	<td>3</td>
+	<td>61.57</td>
+    </tr>   
+</table>
 </div>
 
 ## Usage
 <div align="justify">
-### Baseline Code adopted from ...
-Run from a terminal, use the `test.sh` script, which its general syntax is:
-```bash
-bash test.sh 
-```
+
+
 	
 </div>
 
@@ -91,6 +119,9 @@ For any scientific publication using this data, the following paper should be ci
 <div align="justify">
 	https://github.com/qubvel/segmentation_models.pytorch?tab=readme-ov-file
 	segmentation_models.pytorch
+
+https://catalyst-team.com/
+Catalyst
 
 </div>
 
