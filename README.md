@@ -55,42 +55,40 @@ The code was adopted from [here](https://github.com/sinahmr/DIaM?tab=readme-ov-f
 ```bash
 bash test.sh 
 ```
-The results of the baseline model on the *valset* are presented below.
+The results of the baseline model on the *valset* are presented below. To reproduce the results, download the pretrained models from [here](https://drive.google.com/file/d/1eLjfUJ2ajAMkJKCsoJr-MGSSzZ-LqDbR/view?usp=sharing). 
+Follow the instructions in the **Usage** section, then run the `test.sh` script as explained. 
 
- To reproduce the results, please first download the pre-trained models from [here](https://drive.google.com/file/d/1WuKaJbj3Y3QMq4yw_Tyec-KyTchjSVUG/view?usp=share_link) (also mentioned in the "download pre-trained models" section) and then run the `test.sh` script with different inputs, as explained above.
-<table>
-    <tr>
-        <!--<th colspan="2"></th>
-        <th colspan="3">1-Shot</th>
-        <th colspan="3">5-Shot</th>
-        <th>Benchmark</th>-->
-        <th>Fold</th>
-        <th>Base</th> 
-	<th>Novel</th> 
-	<th>Mean</th>
-        <th>Base</th> 
-	<th>Novel</th>
-	<th>Mean</th>
+<table align="center">
+    <tr align="center">
+        <td>Data</td>
+        <td>base mIoU</td> 
+	<td>novel mIoU</td> 
+	<td>Avg base-nodel mIoU</td>
+        <td>Weighted base mIoU</td> 
+	<td>Weighted novel mIoU</td>
+	<td>Weighted-Sum base-novel mIoU</td>
     </tr>
-    <tr>
-        <td rowspan="5"><b>PASCAL-5<sup>i</sup></b></td>
-        <td>71.33</td> 
-	<td>29.36</td> 
-	<td>50.35</td>
-        <td>71.06</td>
-	<td>53.72</td> 
-	<td>62.39</td>
+    <tr align="center">
+        <td>Valset</td>
+        <td> 29.48 </td> 
+	<td> 03.18 </td> 
+	<td> 16.33 </td> 
+	<td> 11.79 </td> 
+	<td> 1.91 </td> 
+	<td> 13.70 </td> 
     </tr>
-   <tr>
-	<td>69.10</td> 
-	<td>27.07</td> 
-	<td>48.09</td>
-	<td>69.12</td> 
-	<td>54.01</td> 
-	<td>3</td>
-	<td>61.57</td>
+   <tr align="center">
+	<td>Testset</td>
+        <td> --- </td> 
+	<td> --- </td> 
+	<td> --- </td> 
+	<td> --- </td> 
+	<td> --- </td> 
+	<td> --- </td> 
     </tr>   
 </table>
+The weighted mIoUs are calculated using `0.4:0.6 => base:novel`. These weights are derived from the state-of-the-art results presented in the baseline paper.
+
 </div>
 
 ## Usage
@@ -117,12 +115,9 @@ For any scientific publication using this data, the following paper should be ci
 
 ## Acknowledgement
 <div align="justify">
-	https://github.com/qubvel/segmentation_models.pytorch?tab=readme-ov-file
-	segmentation_models.pytorch
 
-https://catalyst-team.com/
-Catalyst
-
+We are most grateful to the authors of [DIaM](https://github.com/sinahmr/DIaM?tab=readme-ov-file), [Semantic Segmentation PyTorch](https://github.com/qubvel/segmentation_models.pytorch?tab=readme-ov-file), 
+and [Catalyst](https://catalyst-team.com/) from whom parts of the baseline code based on.
 </div>
 
 
