@@ -32,17 +32,21 @@
 
 ## Context
 <div align="justify">
-<p>
-	This repository contains the baseline model code for the OpenEarthMap land cover mapping generalized few-shot semantic segmentation challenge, 
-	co-organized with the <b>Learning with Limited Labelled Data for Image and Video Understanding</b> Workshop at the <b>CVPR 2024</b> Conference.
-	Two phase
-</p>
+
+This repository contains the baseline model for the OpenEarthMap land cover mapping generalized few-shot semantic segmentation challenge. 
+The motivation is to enable researchers to develop and benchmark learning methods for generalized few-shot semantic segmentation of high-resolution remote sensing imagery.  
+The challenge is in two phases: the development phase for developing and testing methods on *valset* and the evaluation phase for tweaking and testing on *testset* for final submission.
+
+<!--The challenge aims to evaluate and benchmark learning methods for few-shot semantic segmentation on the OpenEarthMap dataset to promote research in AI for social good.--> 
+
 </div>
 
 ## Dataset
 <div align="justify">
 	
 This dataset extends the original 8 semantic classes of the [OpenEarthmap](https://open-earth-map.org/) benchmark dataset to 13 classes for **5-shot** generalized few-shot semantic segmentation (GFSS) task with **4 novel classes** and **7 base classes**. It consists of only 408 samples from the original OpenEarthMap dataset. The 408 samples are also split into 258 as *trainset*, 50 as *valset*, and 100 as *testset*. The *valset* is used for the development phase of the challenge, and the *testset* is for the evaluation phase. Both sets consist of *support_set* and *query_set* for GFSS tasks. A detailed description of the dataset can be found [here](https://zenodo.org/records/10591939), where it can also be downloaded. 
+
+<!--Example of input data (first three columns) and corresponding supervision masks (last column).-->
 </div>
 
 ## Baseline
