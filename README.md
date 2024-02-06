@@ -10,7 +10,7 @@
 	
 [![GitHub license](https://badgen.net/github/license/Naereen/Strapdown.js)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
 <a href="https://pytorch.org/get-started/locally/"><img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-ee4c2c?logo=pytorch&logoColor=white"></a>
-![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
+![Python](https://img.shields.io/badge/python-3.9+-blue.svg)
 </div>
 
 ##
@@ -26,7 +26,7 @@
 - Challenge Webpage [https://cliffbb.github.io/OEM-Fewshot-Challenge/](https://cliffbb.github.io/OEM-Fewshot-Challenge/)
 - L3D-IVU Workshop @ CVPR 2024 Conference [https://sites.google.com/view/l3divu2024/overview](https://sites.google.com/view/l3divu2024/overview)
 - Dataset Download [https://zenodo.org/records/10591939](https://zenodo.org/records/10591939)
-- Submission Portal [https://codalab.lisn.upsaclay.fr/competitions/17568?secret_key=94bf7540-3a5f-4bcf-a750-03a06c6d9d23](https://codalab.lisn.upsaclay.fr/competitions/17568?secret_key=94bf7540-3a5f-4bcf-a750-03a06c6d9d23)
+- Submission Portal [#](#)
 </p>
 </div>
 
@@ -42,7 +42,7 @@
 ## Dataset
 <div align="justify">
 	
-This dataset extends the original 8 semantic classes of the [OpenEarthmap](https://open-earth-map.org/) benchmark dataset to 13 classes for **5-shot** generalized few-shot semantic segmentation (GFSS) task with **4 novel classes** and **7 base classes**. It consists of only 408 samples from the original OpenEarthMap dataset. The 408 samples are also split into 258 as *trainset*, 50 as *valset*, and 100 as *testset*. The *valset* is used during the development phase of the challenge, and the *testset* is for the evaluation phase. Both sets consist of *support_set* and *query_set* for a GFSS task. A detailed description of the dataset can be found [here](https://zenodo.org/records/10591939), where it can also be downloaded. 
+This dataset extends the original 8 semantic classes of the [OpenEarthmap](https://open-earth-map.org/) benchmark dataset to 13 classes for **5-shot** generalized few-shot semantic segmentation (GFSS) task with **4 novel classes** and **7 base classes**. It consists of only 408 samples from the original OpenEarthMap dataset. The 408 samples are also split into 258 as *trainset*, 50 as *valset*, and 100 as *testset*. The *valset* is used for the development phase of the challenge, and the *testset* is for the evaluation phase. Both sets consist of *support_set* and *query_set* for GFSS tasks. A detailed description of the dataset can be found [here](https://zenodo.org/records/10591939), where it can also be downloaded. 
 </div>
 
 ## Baseline
@@ -51,7 +51,7 @@ This dataset extends the original 8 semantic classes of the [OpenEarthmap](https
 The PSPNet architecture with EfficientNet-B4 encoder from the [Segmentation Models Pytorch](https://github.com/qubvel/segmentation_models.pytorch?tab=readme-ov-file) GitHub repository is adopted as a baseline network.
 The network was pretrained using the *trainset* with the [Catalyst](https://catalyst-team.com/) library. Then, the state-of-the-art framework called [distilled information maximization](https://arxiv.org/abs/2211.14126) 
 (DIaM) was adopted to perform the GFSS task. The code in this repository contains only the GFSS portion. As mentioned by the baseline authors, any pretrained model can be used with their framework. 
-The code was adopted from [here](https://github.com/sinahmr/DIaM?tab=readme-ov-file). To run the code on the *valset*, simply clone this repository and change your directory to the `OEM-Fewshot-Challenge` folder which contains the code files. Then from a terminal, use the `test.sh` script. The general syntax is:
+The code was adopted from [here](https://github.com/sinahmr/DIaM?tab=readme-ov-file). To run the code on the *valset*, simply clone this repository and change your directory into the `OEM-Fewshot-Challenge` folder which contains the code files. Then from a terminal, use the `test.sh` script. The general syntax is:
 ```bash
 bash test.sh 
 ```
@@ -60,7 +60,7 @@ Follow the instructions in the **Usage** section, then run the `test.sh` script 
 
 <table align="center">
     <tr align="center">
-        <td>Data</td>
+        <td>Phase</td>
         <td>base mIoU</td> 
 	<td>novel mIoU</td> 
 	<td>Avg base-nodel mIoU</td>
@@ -93,7 +93,20 @@ The weighted mIoUs are calculated using `0.4:0.6 => base:novel`. These weights a
 
 ## Usage
 <div align="justify">
+To use the baseline code, you first need to clone the repository and change your directory into the `OEM-Fewshot-Challenge` folder. Then follow the steps below:</br>
+1. Install all the requirements. `Python 3.9` was used in our experiments. Install the list of packages in the `requirements.txt` file using `pip install -r requirements.txt`.
+2. Download the dataset from [here](https://zenodo.org/records/10591939) into a directory that you set in the config file `oem.yaml`
+3. Download the pretrained weights from [here](https://drive.google.com/file/d/1eLjfUJ2ajAMkJKCsoJr-MGSSzZ-LqDbR/view?usp=sharing) into a directory that you set in the config file `oem.yaml`
 
+
+
+#### Pre-processed data from drive
+
+We provide the versions of PASCAL VOC 2012 and MS-COCO 2017 used in this work [here](https://etsmtl365-my.sharepoint.com/:u:/g/personal/seyed-mohammadsina_hajimiri_1_ens_etsmtl_ca/Earq9o6KqvJDleNRKqfFZ_cB1AzQCtaZ5g2noh4yjZoecg?e=g1g9t4). You can download the full .zip and directly extract it in the `data/` folder.
+
+#### From scratch
+
+Alternatively, you can prepare the datasets yourself. Here is the structure of the data folder for you to reproduce:
 
 	
 </div>
@@ -132,18 +145,7 @@ and [Catalyst](https://catalyst-team.com/) from which the baseline code is built
 
 ## &#x1F3AC; 
 
-### :one: Requirements
-We used `Python 3.9` in our experiments and the list of packages is available in the `requirements.txt` file. You can install them using `pip install -r requirements.txt`.
 
-### :two: Download data
-
-#### Pre-processed data from drive
-
-We provide the versions of PASCAL VOC 2012 and MS-COCO 2017 used in this work [here](https://etsmtl365-my.sharepoint.com/:u:/g/personal/seyed-mohammadsina_hajimiri_1_ens_etsmtl_ca/Earq9o6KqvJDleNRKqfFZ_cB1AzQCtaZ5g2noh4yjZoecg?e=g1g9t4). You can download the full .zip and directly extract it in the `data/` folder.
-
-#### From scratch
-
-Alternatively, you can prepare the datasets yourself. Here is the structure of the data folder for you to reproduce:
 
 ```
 data
