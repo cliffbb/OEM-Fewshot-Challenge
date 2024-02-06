@@ -34,10 +34,8 @@
 <div align="justify">
 
 This repository contains the baseline model for the OpenEarthMap land cover mapping generalized few-shot semantic segmentation challenge. 
-The motivation is to enable researchers to develop and benchmark learning methods for generalized few-shot semantic segmentation of high-resolution remote sensing imagery.  
-The challenge is in two phases: the development phase for developing and testing methods on *valset* and the evaluation phase for tweaking and testing on *testset* for final submission.
-
-<!--The challenge aims to evaluate and benchmark learning methods for few-shot semantic segmentation on the OpenEarthMap dataset to promote research in AI for social good.--> 
+The motivation is to enable researchers to develop and benchmark learning methods for generalized few-shot semantic segmentation of high-resolution remote sensing imagery. 
+The challenge is in two phases: the development phase is for developing and testing methods on a *valset*, and the evaluation phase is for tweaking and testing on a *testset* for final submission.
 
 </div>
 
