@@ -54,7 +54,7 @@ def make_dataset(data_root: str,
     if is_support_set:
         list_read = [[fname for fname in support_query_list['support_set'][class_]] for class_ in support_query_list['support_set']]     
         image_label_list: Dict[int, List[Tuple[str, str]]] = defaultdict(list)
-        
+                
     print(f"Processing data for {class_list}")
     process_partial = partial(process_image, data_root=data_root, images_dir=images_dir, labels_dir=labels_dir)
 
@@ -97,7 +97,7 @@ def process_image(item: [str, list],
         return image_label_list
     
     image_path = os.path.join(data_root, images_dir, item) 
-    label_path = os.path.join(data_root, labels_dir, item) 
+    label_path = os.path.join(data_root, labels_dir, item)   
     item_set: Tuple[str, str] = (image_path, label_path)
     image_label_list.append(item_set)
     
@@ -232,4 +232,4 @@ class Resize(object):
 
             return image, label
         else:
-            return image, new_h, new_w
+            return image #, new_h, new_w

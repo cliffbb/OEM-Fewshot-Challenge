@@ -207,8 +207,7 @@ class Classifier(object):
             ce = ce.mean(0)
         return ce
 
-    def optimize(self, features_s: torch.tensor, features_q: torch.tensor, gt_s: torch.tensor,
-                 valid_pixels_q: torch.tensor) -> torch.tensor:
+    def optimize(self, features_s: torch.tensor, features_q: torch.tensor, gt_s: torch.tensor) -> torch.tensor:
         """
         DIaM inference optimization
 
@@ -234,15 +233,17 @@ class Classifier(object):
         ds_gt_s = F.interpolate(gt_s.float(), size=features_s.size()[-2:], mode='nearest').long()
         one_hot_gt_s = to_one_hot(ds_gt_s, self.num_classes)  # [1, num_novel_classes * shot, num_classes, h, w]
         valid_pixels_s = (ds_gt_s != 255).float()
-        valid_pixels_q = F.interpolate(valid_pixels_q.float(), size=features_q.size()[-2:], mode='nearest').long()
+        
+        # Calculate initial pi
+        self.compute_pi(features_q, valid_pixels_s) 
 
         for iteration in range(self.adapt_iter):
             logits_s, logits_q = self.get_logits(features_s), self.get_logits(features_q)
             proba_s, proba_q = self.get_probas(logits_s), self.get_probas(logits_q)
 
             snapshot_proba_q = self.get_base_snapshot_probas(features_q)
-            distillation = self.distillation_loss(proba_q, snapshot_proba_q, valid_pixels_q, reduction='none')
-            d_kl, entropy, marginal = self.get_entropies(valid_pixels_q, proba_q, reduction='none')
+            distillation = self.distillation_loss(proba_q, snapshot_proba_q, valid_pixels_s, reduction='none')
+            d_kl, entropy, _ = self.get_entropies(valid_pixels_s, proba_q, reduction='none')
             ce = self.get_ce(proba_s, valid_pixels_s, one_hot_gt_s, reduction='none')
             loss = l1 * ce + l2 * d_kl + l3 * entropy + l4 * distillation
 
@@ -252,4 +253,4 @@ class Classifier(object):
 
             # Update pi
             if (iteration + 1) in self.pi_update_at and (self.pi_estimation_strategy == 'self') and (l2 != 0):
-                self.compute_pi(features_q, valid_pixels_q)
+                self.compute_pi(features_q, valid_pixels_s)

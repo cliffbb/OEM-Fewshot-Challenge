@@ -1,5 +1,6 @@
 import argparse
 import cv2
+import os
 import numpy as np
 from multiprocessing import Pool
 from typing import List
@@ -48,12 +49,14 @@ def get_val_loader(args: argparse.Namespace) -> torch.utils.data.DataLoader:
 
 
 def get_image_and_label(image_path, label_path):
+    label = None
     image = cv2.imread(image_path, cv2.IMREAD_COLOR)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-    image = np.float32(image)
-    label = cv2.imread(label_path, cv2.IMREAD_GRAYSCALE)
-    if image.shape[0] != label.shape[0] or image.shape[1] != label.shape[1]:
-        raise (RuntimeError('Image & label shape mismatch: ' + image_path + ' ' + label_path + '\n'))
+    image = np.float32(image)    
+    if os.path.isfile(label_path):
+        label = cv2.imread(label_path, cv2.IMREAD_GRAYSCALE)
+        if image.shape[0] != label.shape[0] or image.shape[1] != label.shape[1]:
+            raise (RuntimeError('Image & label shape mismatch: ' + image_path + ' ' + label_path + '\n'))
     return image, label
 
 
@@ -86,14 +89,17 @@ class MultiClassValData(Dataset):
 
     def __getitem__(self, index):  # It only gives the query set 
         image_path, label_path = self.query_data_list[index]
-        qry_img, label = get_image_and_label(image_path, label_path)
         qry_img_name = image_path.split("/")[-1].split(".")[0]
-             
+        qry_img, label = get_image_and_label(image_path, label_path)
+        
+        if label is None:
+            if self.transform is not None:
+                qry_img = self.transform(qry_img, None)
+            return qry_img, qry_img_name
+
         if self.transform is not None:
             qry_img, label = self.transform(qry_img, label)
-        valid_pixels = (label != 255).float()
-        
-        return qry_img, label, valid_pixels, qry_img_name
+        return qry_img, label, qry_img_name
 
     def get_support_set(self):   # It gives support set
         image_list, label_list = list(), list()
