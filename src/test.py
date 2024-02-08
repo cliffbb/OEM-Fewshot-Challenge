@@ -92,13 +92,18 @@ def validate(args: argparse.Namespace, val_loader: torch.utils.data.DataLoader, 
             except (UnboundLocalError, StopIteration):
                 iter_loader = iter(val_loader)
                 loader_output = next(iter_loader)
-            qry_img, q_label, q_valid_pix, image_name = loader_output
 
+            if len(loader_output) == 3:
+                qry_img, q_label, image_name = loader_output
+            if len(loader_output) == 2:
+                qry_img, image_name = loader_output
+                q_label = None
+                
             qry_img = qry_img.to(device, non_blocking=True)
-            q_label = q_label.to(device, non_blocking=True)
             features_q = model.module.extract_features(qry_img).detach().unsqueeze(1) 
-            valid_pixels_q = q_valid_pix.unsqueeze(1).to(device)
-            gt_q = q_label.unsqueeze(1)
+            if q_label is not None:
+                q_label = q_label.to(device, non_blocking=True)
+                gt_q = q_label.unsqueeze(1)
 
         # =========== Initialize the classifier and run the method ===============
         base_weight = model.module.classifier.weight.detach().clone() 
@@ -107,8 +112,7 @@ def validate(args: argparse.Namespace, val_loader: torch.utils.data.DataLoader, 
                     
         classifier = Classifier(args, base_weight, base_bias, n_tasks=features_q.size(0))
         classifier.init_prototypes(features_s, gt_s)
-        classifier.compute_pi(features_q, valid_pixels_q) 
-        classifier.optimize(features_s, features_q, gt_s, valid_pixels_q)
+        classifier.optimize(features_s, features_q, gt_s)
 
         runtime += time.time() - t0
 
@@ -116,27 +120,42 @@ def validate(args: argparse.Namespace, val_loader: torch.utils.data.DataLoader, 
         logits = classifier.get_logits(features_q).detach()
         probas = classifier.get_probas(logits)
 
-        if args.save_pred_maps is True:    # Save predictions in '.png' file and submit for evaluation
-            ensure_dir('results/targets')
-            ensure_dir('results/preds')
-            n_task, shots, num_classes, h, w = probas.size()
-            H, W = gt_q.size()[-2:]
-            if (h, w) != (H, W):
-                probas = F.interpolate(probas.view(n_task * shots, num_classes, h, w),
-                                    size=(H, W), mode='bilinear', align_corners=True).view(n_task, shots, num_classes, H, W)
-            pred = probas.argmax(2)  # [n_query, shot, H, W]
-            pred = np.array(pred.squeeze().cpu(), np.uint8)
-            target = np.array(gt_q.squeeze().cpu(), np.uint8)
-            fname = ''.join(image_name)
-            cv2.imwrite(os.path.join('results/targets', fname + '.png'), target)
-            cv2.imwrite(os.path.join('results/preds', fname + '.png'), pred)
+        if q_label is not None:
+            if args.save_pred_maps is True:    # Save predictions in '.png' file format
+                # ensure_dir('results/targets')
+                ensure_dir('results/preds')
+                n_task, shots, num_classes, h, w = probas.size()
+                H, W = gt_q.size()[-2:]
+                if (h, w) != (H, W):
+                    probas = F.interpolate(probas.view(n_task * shots, num_classes, h, w),
+                                        size=(H, W), mode='bilinear', align_corners=True).view(n_task, shots, num_classes, H, W)
+                pred = probas.argmax(2)  # [n_query, shot, H, W]
+                pred = np.array(pred.squeeze().cpu(), np.uint8)
+                # target = np.array(gt_q.squeeze().cpu(), np.uint8)
+                fname = ''.join(image_name)
+                # cv2.imwrite(os.path.join('results/targets', fname + '.png'), target)
+                cv2.imwrite(os.path.join('results/preds', fname + '.png'), pred)
 
-        intersection, union, target = fast_intersection_and_union(probas, gt_q)  # [batch_size_val, 1, num_classes]
-        intersection, union, target = intersection.squeeze(1).cpu(), union.squeeze(1).cpu(), target.squeeze(1).cpu()
-        cls_intersection += intersection.sum(0)
-        cls_union += union.sum(0)
-        cls_target += target.sum(0)
-
+            intersection, union, target = fast_intersection_and_union(probas, gt_q)  # [batch_size_val, 1, num_classes]
+            intersection, union, target = intersection.squeeze(1).cpu(), union.squeeze(1).cpu(), target.squeeze(1).cpu()
+            cls_intersection += intersection.sum(0)
+            cls_union += union.sum(0)
+            cls_target += target.sum(0)
+        else:
+            if args.save_pred_maps is True:    # Save predictions in '.png' file format
+                ensure_dir('results/preds')
+                n_task, shots, num_classes, h, w = probas.size()
+                if (h, w) != (args.image_size, args.image_size):
+                    probas = F.interpolate(probas.view(n_task * shots, num_classes, h, w), size=(args.image_size, args.image_size), 
+                                       mode='bilinear', align_corners=True).view(n_task, shots, num_classes, args.image_size, args.image_size)
+                pred = probas.argmax(2)  # [n_query, shot, H, W]
+                pred = np.array(pred.squeeze().cpu(), np.uint8)
+                fname = ''.join(image_name)
+                cv2.imwrite(os.path.join('results/preds', fname + '.png'), pred)
+    
+    if q_label is None:
+        return
+          
     base_count, novel_count, sum_base_IoU, sum_novel_IoU = 4 * [0]
     results = []
     results.append('\nClass IoU Results')
