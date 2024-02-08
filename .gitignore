@@ -10,7 +10,7 @@ results/
 *.npy
 *.pth
 *.pt
-*.png
+# *.png
 
 .DS_Store
 
