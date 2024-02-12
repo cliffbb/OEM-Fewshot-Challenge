@@ -84,7 +84,6 @@
         <div class="row">
             <h4 class="col-md-10 col-md-offset-1">
                 <b style="color: brown;">Challenge development phase (1st round) is opened!</b>
-                <!-- <b style="color: brown;">Codalab submission portal for the challenge development phase is opened!</b> -->
             </h4>
         </div>
 
@@ -99,14 +98,12 @@
                     of 0.25&ndash;0.5m ground sampling distance for global high-resolution land cover mapping. It presents an advancement in geographical 
                     diversity and annotation quality, enabling models to generalize worldwide. This challenge extends the original RS semantic 
                     segmentation task of the OpenEarthMap benchmark to generalized few-shot semantic segmentation (GFSS) task in RS image understanding.</br>
-                <!-- </p>
-                <p class="text-justify"> -->
+                
                     The challenge aims to evaluate and benchmark learning methods for few-shot semantic segmentation on the OpenEarthMap dataset
                     to promote research in AI for social good. The motivation is to enable researchers to develop few-shot learning algorithms 
                     for high-resolution RS image semantic segmentation, which is a fundamental problem in various applications of RS image understanding,
                     such as disaster response, urban planning, and natural resource management.</br>
-                <!-- </p>
-                <p class="text-justify"> -->
+                
                     The challenge is part of the <a href="https://sites.google.com/view/l3divu2024/overview" target="_blank">3rd Workshop on Learning with Limited 
                     Labelled Data for Image and Video Understanding (L3D-IVU)</a> in conjunction with CVPR 2024 Conference. The scientific papers of the best submissions
                     will be presented in oral at the 3rd L3D-IVU Workshop @ CVPR 2024 Conference, and will also be published in the CVPR 2024 Workshops Proceedings. 
@@ -132,7 +129,6 @@
                     the testset to the <a href="https://codalab.lisn.upsaclay.fr/competitions/17568" target="_blank">Codalab competition submission portal</a> within <b>six days</b> from the release of the testing set.
                     After evaluation of the results, the top winners are announced.</br>
 
-                    <!-- In parallel, participants submit a <a href="#paper">challenge paper</a> of their proposed method.  -->
                     <strong>Note that the top winners of this challenge are determined not only on the performance on the leaderboard, but in addition to the novelty 
                     of their proposed method as described in the manuscripts they submit in the Phase 1. 
                     The manuscripts of the top winners will be included in the CVPR 2024 Workshops Proceedings.</strong>
@@ -253,13 +249,15 @@
                     competition submission portal</a>. The predicted segmentation maps are supposed to be in `xxxx.png` format. The `xxxx` is the name 
                     of the image in the <i>query set</i>. For example, given a query image `accra_2.tif`, the predicted segmentation map should be
                     named as `accra_2.png`. Any other format of submission will not be accepted.
-                    <!-- The compressed `.zip` file which contains all predicted segmentation maps must bear the name of the team.  -->
                 </p>
                 <p class="text-justify" style="margin-bottom:0px;">
                     To ensure fair evaluation and reproducible results, the following rules are set for this challenge competition as well:
                     <ul>
                         <li>
-                            Submissions must not use any dataset apart from the dataset distributed for this challenge. 
+                            Submissions must not use any <b>remote sensing</b> dataset apart from the dataset distributed for this challenge. 
+                        </li>
+                        <li>
+                            <b>Foundation models are not allowed to be used.</b>
                         </li>
                         <li>
                             All submissions are also required to submit a challenge paper describing their proposed methods.
