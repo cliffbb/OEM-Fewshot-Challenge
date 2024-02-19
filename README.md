@@ -66,7 +66,7 @@ Follow the instructions in the **Usage** section, then run the `test.sh` script 
         <td>Phase</td>
         <td>base mIoU</td> 
 	<td>novel mIoU</td> 
-	<td>Avg base-nodel mIoU</td>
+	<td>Average base-novel mIoU</td>
         <td>Weighted base mIoU</td> 
 	<td>Weighted novel mIoU</td>
 	<td>Weighted-Sum base-novel mIoU</td>
