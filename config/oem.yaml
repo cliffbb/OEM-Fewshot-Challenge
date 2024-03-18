@@ -1,10 +1,10 @@
 DATA:
   data_name: OpenEarthMap few-shot challenge
-  data_root:  # Download the 'valset' and set your data_root to 'valtset' folder
+  data_root:  # Download the 'valset' or 'testset' and set your data_root to the folder appropriately.
   images_dir: images/  
   labels_dir: labels/
   data_list_path: data/val.json
-  novel_classes:   # Change the novel classnames for Validation/Testing. The current classnames are Validation classes
+  novel_classes:   # Change the novel classnames for Validation/Testing. The current classnames are Validation classes.
     8: 'road type 2'        
     9: 'river'               
     10: 'boat & ship'       
@@ -18,18 +18,18 @@ DATA:
 MODEL:
   model_name: PSPNet
   encoder_name: efficientnet-b4
-  pretrained:  # Download the model and set the pretrained path to `model.best.pth` file
+  pretrained:  # Download the model and set the pretrained path to `model.best.pth` file.
 
 EVALUATION:
-  shot: 5   # Only 5-shot is allowed
+  shot: 5   # Only 5-shot is allowed.
   save_pred_maps: True
   save_ious: True  
-  batch_size_val: 1  # Only batch size 1 is supported (Evaluate one query image at a time)
+  batch_size_val: 1  # Only batch size 1 is supported (Evaluate one query image at a time).
   shuffle_test_data: False
   manual_seed: 2023
   gpus: [0]
 
-CLASSIFIER:   # All the settings here are from the baseline paper
+CLASSIFIER:   # All the settings here are from the baseline paper.
   weights: [100, 1, 1, 100]  
   adapt_iter: 100 
   cls_lr: 0.00125   
