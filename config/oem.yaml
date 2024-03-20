@@ -3,7 +3,7 @@ DATA:
   data_root:  # Download the 'valset' or 'testset' and set your data_root to the folder appropriately.
   images_dir: images/  
   labels_dir: labels/
-  data_list_path: # Set the data list path file `data/val.json`=>'valset' and `data/test.json`=>'testset'
+  data_list_path: # Set to `data/val.json` for 'valset' and to `data/test.json` for 'testset'
   novel_classes:  # Novel classes below. Uncomment or comment the appropiate one
     #********************************# 
     # Novel classes for the 'valset' #
