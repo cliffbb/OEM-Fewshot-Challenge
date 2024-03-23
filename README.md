@@ -25,7 +25,7 @@
 **Get involved! Check out the following links:** </br>
 - Challenge Webpage [https://cliffbb.github.io/OEM-Fewshot-Challenge/](https://cliffbb.github.io/OEM-Fewshot-Challenge/)
 - L3D-IVU Workshop @ CVPR 2024 Conference [https://sites.google.com/view/l3divu2024/overview](https://sites.google.com/view/l3divu2024/overview)
-- Dataset Download [https://zenodo.org/records/10591939](https://zenodo.org/records/10591939)
+- Dataset Download [https://zenodo.org/records/10828417](https://zenodo.org/records/10591939)
 - Submission Portal [https://codalab.lisn.upsaclay.fr/competitions/17568](https://codalab.lisn.upsaclay.fr/competitions/17568)
 </p>
 </div>
