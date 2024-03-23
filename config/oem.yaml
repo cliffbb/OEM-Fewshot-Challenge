@@ -4,7 +4,7 @@ DATA:
   images_dir: images/  
   labels_dir: labels/
   data_list_path: # Set to `data/val.json` for 'valset' and to `data/test.json` for 'testset'
-  novel_classes:  # Novel classes below. Uncomment or comment the appropiate one
+  novel_classes:  # Novel class names are below. Uncomment or comment the appropiate one
     #********************************# 
     # Novel classes for the 'valset' #
     #********************************# 
