@@ -42,9 +42,9 @@ The challenge is in two phases: the development phase is for developing and test
 ## Dataset
 <div align="justify">
 
-<p>	
+	
 This dataset extends the original 8 semantic classes of the [OpenEarthmap](https://open-earth-map.org/) benchmark dataset to 15 classes for **5-shot** generalized few-shot semantic segmentation (GFSS) task with **4 novel classes** and **7 base classes**. It consists of only 408 samples from the original OpenEarthMap dataset. The 408 samples are also split into 258 as *trainset*, 50 as *valset*, and 100 as *testset*. The *valset* is used for the development phase of the challenge, and the *testset* is for the evaluation phase. Both sets consist of *support_set* and *query_set* for GFSS tasks. A detailed description of the dataset can be found [here](https://zenodo.org/records/10591939), where it can also be downloaded. Below are examples of novel classes in the *support_set* (first two columns), and base classes + novel classes in the *query_set* (last two columns).
-</p>
+
 <p><img src="docs/assets/img/fewshot-examples1.png"></p>
 </div>
 
@@ -82,12 +82,12 @@ Follow the instructions in the **Usage** section, then run the `test.sh` script 
     </tr>
    <tr align="center">
 	<td>testset</td>
-        <td> --- </td> 
-	<td> --- </td> 
-	<td> --- </td> 
-	<td> --- </td> 
-	<td> --- </td> 
-	<td> --- </td> 
+        <td> 30.07 </td> 
+	<td> 9.39 </td> 
+	<td> 19.73 </td> 
+	<td> 12.03 </td> 
+	<td> 5.36 </td> 
+	<td> 17.66 </td> 
     </tr>   
 </table>
 The weighted mIoUs are calculated using `0.4:0.6 => base:novel`. These weights are derived from the state-of-the-art results presented in the baseline paper.
