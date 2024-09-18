@@ -115,13 +115,12 @@ You can pretrained your model using the *trainset* and any simple training schem
 <div align="justify">
 For any scientific publication using this data, the following paper should be cited:
 <pre style="white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word;">
-@InProceedings{Xia_2023_WACV,
-    author    = {Xia, Junshi and Yokoya, Naoto and Adriano, Bruno and Broni-Bediako, Clifford},
-    title     = {OpenEarthMap: A Benchmark Dataset for Global High-Resolution Land Cover Mapping},
-    booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
-    month     = {January},
-    year      = {2023},
-    pages     = {6254-6264}
+@misc{bronibediako2024GFSS,
+      title={Generalized Few-Shot Semantic Segmentation in Remote Sensing: Challenge and Benchmark}, 
+      author={Clifford Broni-Bediako and Junshi Xia and Jian Song and Hongruixuan Chen and Mennatullah Siam and Naoto Yokoya},
+      year={2024},
+      note={arXiv:2409.11227},
+      url={https://arxiv.org/abs/2409.11227}, 
 }
 </pre>
 </div>
