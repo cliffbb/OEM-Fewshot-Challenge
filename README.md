@@ -118,7 +118,7 @@ For any scientific publication using this data, the following paper should be ci
 <pre style="white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word;">
 @misc{bronibediako2024GFSS,
       title={Generalized Few-Shot Semantic Segmentation in Remote Sensing: Challenge and Benchmark}, 
-      author={Clifford Broni-Bediako and Junshi Xia and Jian Song and Hongruixuan Chen and Mennatullah Siam and Naoto Yokoya},
+      author={Clifford Broni-Bediako, Junshi Xia, Jian Song, Hongruixuan Chen, Mennatullah Siam, and Naoto Yokoya},
       year={2024},
       note={arXiv:2409.11227},
       url={https://arxiv.org/abs/2409.11227}, 
